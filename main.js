@@ -6,3 +6,4 @@ document.getElementById("app").innerHTML = `
     ${Home()}
     ${ExampleComponent()}
 `;
+//TODO Add your JavaScript code here
