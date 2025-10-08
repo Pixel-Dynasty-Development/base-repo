@@ -1,5 +1,5 @@
 const ExampleComponent = () => {
-  return `
+	return `
         <p>This is an example component.</p>
     `;
 };

@@ -1,9 +1,29 @@
 {
-  "name": "demo-repo",
-  "version": "0.2.0",
-  "description": "A sample package.json",
-  "dependencies": {
-   
-  },
-  "license": "MIT"
+	"name": "repo-title",
+	"version": "0.1.0",
+	"description": "Repo Description",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"format": "prettier --write \"**/*.{js,json,md,html,css}\""
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/your-username/repository-name.git"
+	},
+	"keywords": [
+		"web-development",
+		"template",
+		"pixel-dynasty",
+		"vanilla-js",
+		"tailwind-css"
+	],
+	"author": "Pixel Dynasty Development",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/your-username/repository-name/issues"
+	},
+	"homepage": "https://github.com/your-username/repository-name#readme",
+	"devDependencies": {
+		"prettier": "^3.2.5"
+	}
 }

@@ -1,5 +1,5 @@
 const Home = () => {
-  return `
+	return `
         <p>This is the home page content.</p>
     `;
 };
