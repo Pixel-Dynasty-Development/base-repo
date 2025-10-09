@@ -24,6 +24,7 @@
 	},
 	"homepage": "https://github.com/your-username/repository-name#readme",
 	"devDependencies": {
-		"prettier": "^3.2.5"
+		"prettier": "^3.2.5",
+		"live-server": "1.2.2"
 	}
 }
