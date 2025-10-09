@@ -1,19 +1,83 @@
 <!doctype html>
-<html lang="en">
+<html
+	lang="en"
+	class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
 		<meta
 			name="viewport"
 			content="width=device-width, initial-scale=1.0" />
-		<title>Base Template Project</title>
+		<title>Pixel Dynasty Development</title>
+
+		<!-- Tailwind CSS -->
+		<script src="https://cdn.tailwindcss.com"></script>
+
+		<!-- Google Fonts (Inter) -->
 		<link
-			rel="stylesheet"
-			href="./styles/main.css" />
+			rel="preconnect"
+			href="https://fonts.googleapis.com" />
+		<link
+			rel="preconnect"
+			href="https://fonts.gstatic.com"
+			crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+			rel="stylesheet" />
+
+		<!-- Custom Styles & Color Scheme Variables -->
+		<style>
+			:root {
+				/* 🎨 Easy-to-change color scheme for any project */
+				--color-primary: #111827; /* Dark Gray */
+				--color-primary-hover: #1f2937;
+				--color-secondary: #3b82f6; /* Blue */
+				--color-accent: #10b981; /* Green */
+				--color-background: #f9fafb; /* Light Gray */
+				--color-text-base: #111827;
+				--color-text-muted: #6b7280;
+			}
+			body {
+				font-family: "Inter", sans-serif;
+				background-color: var(--color-background);
+				color: var(--color-text-base);
+			}
+			/* Custom Helper Classes */
+			.bg-primary {
+				background-color: var(--color-primary);
+			}
+			.bg-primary-hover:hover {
+				background-color: var(--color-primary-hover);
+			}
+			.bg-secondary {
+				background-color: var(--color-secondary);
+			}
+			.text-primary {
+				color: var(--color-primary);
+			}
+			.text-secondary {
+				color: var(--color-secondary);
+			}
+			.text-accent {
+				color: var(--color-accent);
+			}
+			.border-primary {
+				border-color: var(--color-primary);
+			}
+		</style>
 	</head>
-	<body>
-		<div id="app"></div>
-		<script
-			type="module"
-			src="./main.js"></script>
+	<body class="antialiased">
+		<!-- Header will be dynamically loaded here -->
+		<header id="header-container"></header>
+
+		<!-- Page content will be dynamically loaded here -->
+		<main
+			id="page-container"
+			class="min-h-screen"></main>
+
+		<!-- Footer will be dynamically loaded here -->
+		<footer id="footer-container"></footer>
+
+		<!-- Main script to handle routing and dynamic loading -->
+		<script src="assets/js/main.js"></script>
 	</body>
 </html>
