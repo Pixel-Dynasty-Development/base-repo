@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html
 	lang="en"
 	class="scroll-smooth">
@@ -7,7 +7,7 @@
 		<meta
 			name="viewport"
 			content="width=device-width, initial-scale=1.0" />
-		<title>Pixel Dynasty Development</title>
+		<title>Template Site</title>
 
 		<!-- Tailwind CSS -->
 		<script src="https://cdn.tailwindcss.com"></script>
@@ -25,45 +25,9 @@
 			rel="stylesheet" />
 
 		<!-- Custom Styles & Color Scheme Variables -->
-		<style>
-			:root {
-				/* 🎨 Easy-to-change color scheme for any project */
-				--color-primary: #111827; /* Dark Gray */
-				--color-primary-hover: #1f2937;
-				--color-secondary: #3b82f6; /* Blue */
-				--color-accent: #10b981; /* Green */
-				--color-background: #f9fafb; /* Light Gray */
-				--color-text-base: #111827;
-				--color-text-muted: #6b7280;
-			}
-			body {
-				font-family: "Inter", sans-serif;
-				background-color: var(--color-background);
-				color: var(--color-text-base);
-			}
-			/* Custom Helper Classes */
-			.bg-primary {
-				background-color: var(--color-primary);
-			}
-			.bg-primary-hover:hover {
-				background-color: var(--color-primary-hover);
-			}
-			.bg-secondary {
-				background-color: var(--color-secondary);
-			}
-			.text-primary {
-				color: var(--color-primary);
-			}
-			.text-secondary {
-				color: var(--color-secondary);
-			}
-			.text-accent {
-				color: var(--color-accent);
-			}
-			.border-primary {
-				border-color: var(--color-primary);
-			}
-		</style>
+		<link
+			rel="stylesheet"
+			href="css/styles.css" />
 	</head>
 	<body class="antialiased">
 		<!-- Header will be dynamically loaded here -->
@@ -78,6 +42,6 @@
 		<footer id="footer-container"></footer>
 
 		<!-- Main script to handle routing and dynamic loading -->
-		<script src="assets/js/main.js"></script>
+		<script src="js/main.js"></script>
 	</body>
 </html>
