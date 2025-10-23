@@ -5,9 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	// Define the routes for your pages. Add new pages here!
 	const routes = {
-		home: "pages/home.html",
-		about: "pages/about.html",
-		contact: "pages/contact.html",
+		home: "src/pages/home.html",
+		about: "src/pages/about.html",
+		contact: "src/pages/contact.html",
 	};
 
 	// --- Core Functions ---
@@ -47,8 +47,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	async function initializeApp() {
 		// Load the persistent components (header and footer)
 		await Promise.all([
-			loadContent("components/Header.html", headerContainer),
-			loadContent("components/Footer.html", footerContainer),
+			loadContent("./src/components/Header.html", headerContainer),
+			loadContent("./src/components/Footer.html", footerContainer),
 		]);
 
 		// Add event listeners for the newly loaded header (like mobile menu)
