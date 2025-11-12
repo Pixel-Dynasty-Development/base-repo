@@ -1,35 +1,33 @@
 {
-	"name": "repo-title",
-	"version": "0.1.0",
-	"description": "Repo Description",
-	"scripts": {
-		"dev": "vite",
-		"build": "vite build",
-		"preview": "vite build && vite preview",
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"format": "prettier --write \"**/*.{js,json,md,html,css}\""
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/your-username/repository-name.git"
-	},
-	"keywords": [
-		"web-development",
-		"template",
-		"pixel-dynasty",
-		"vanilla-js",
-		"tailwind-css"
-	],
-	"author": "Pixel Dynasty Development",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/your-username/repository-name/issues"
-	},
-	"homepage": "https://github.com/your-username/repository-name#readme",
-	"devDependencies": {
-		"prettier": "^3.2.5",
-		"eslint": "^8.45.0",
-		"glob": "11.0.3",
-		"vite": "^5.4.21"
-	}
+  "name": "repo-title",
+  "version": "0.1.0",
+  "description": "Repo Description",
+  "scripts": {
+    "dev": "vite --open",
+    "preview": "vite build && vite preview --open",
+    "format": "prettier --write \"**/*.{js,json,md,html,css}\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-username/repository-name.git"
+  },
+  "keywords": [
+    "web-development",
+    "template",
+    "pixel-dynasty",
+    "vanilla-js",
+    "tailwind-css"
+  ],
+  "author": "Pixel Dynasty Development",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/your-username/repository-name/issues"
+  },
+  "homepage": "https://github.com/your-username/repository-name#readme",
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "eslint": "^8.45.0",
+    "glob": "11.0.3",
+    "vite": "^5.4.21"
+  }
 }
