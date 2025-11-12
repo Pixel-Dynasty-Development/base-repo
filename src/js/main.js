@@ -1,5 +1,15 @@
+import { loadHTML } from "./utils/html-loader.js";
+import { initializeRouter } from "./router.js";
+
+// Start the application when the DOM is ready
 document.addEventListener("DOMContentLoaded", () => {
-	const pageContainer = document.getElementById("page-container");
+	initializeApp();
+});
+
+/**
+ * Loads persistent components and initializes the router.
+ */
+async function initializeApp() {
 	const headerContainer = document.getElementById("header-container");
 	const footerContainer = document.getElementById("footer-container");
 
@@ -78,17 +88,19 @@ document.addEventListener("DOMContentLoaded", () => {
 				mobileMenu.classList.toggle("hidden");
 			});
 
-			// Close mobile menu when a nav link is clicked
-			headerContainer.addEventListener("click", (e) => {
-				if (e.target.classList.contains("nav-link")) {
-					if (!mobileMenu.classList.contains("hidden")) {
-						mobileMenu.classList.add("hidden");
-					}
-				}
-			});
-		}
-	}
+	if (mobileMenuButton && mobileMenu && headerContainer) {
+		// Toggle mobile menu
+		mobileMenuButton.addEventListener("click", () => {
+			mobileMenu.classList.toggle("hidden");
+		});
 
-	// Start the application
-	initializeApp();
-});
+		// Close mobile menu when a nav link is clicked (using event delegation)
+		headerContainer.addEventListener("click", (e) => {
+			if (e.target.classList.contains("nav-link")) {
+				if (!mobileMenu.classList.contains("hidden")) {
+					mobileMenu.classList.add("hidden");
+				}
+			}
+		});
+	}
+}

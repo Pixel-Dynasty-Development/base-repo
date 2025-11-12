@@ -9,10 +9,6 @@
 			content="width=device-width, initial-scale=1.0" />
 		<title>Template Site</title>
 
-		<!-- Tailwind CSS -->
-		<script src="https://cdn.tailwindcss.com"></script>
-
-		<!-- Google Fonts (Inter) -->
 		<link
 			rel="preconnect"
 			href="https://fonts.googleapis.com" />
@@ -24,26 +20,51 @@
 			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
 			rel="stylesheet" />
 
-		<!-- Custom Styles & Color Scheme Variables -->
-		<link
-			rel="stylesheet"
-			href="src/styles/main.css" />
+		<script src="https://cdn.tailwindcss.com"></script>
+
+		<script>
+			tailwind.config = {
+				theme: {
+					extend: {
+						fontFamily: {
+							sans: ["Inter", "sans-serif"],
+						},
+						colors: {
+							primary: "#111827",
+							"primary-hover": "#1f2937",
+							secondary: "#3b82f6",
+							accent: "#10b981",
+							background: "#f9fafb",
+							"text-base": "#111827",
+							"text-muted": "#6b7280",
+						},
+					},
+				},
+			};
+		</script>
+
+		<style type="text/tailwindcss">
+			@layer base {
+				body {
+					/* These will now work, pulling from the config above */
+					font-family: theme("fontFamily.sans");
+					background-color: theme("colors.background");
+					color: theme("colors.text-base");
+				}
+			}
+		</style>
 	</head>
 	<body class="antialiased">
-		<!-- Header will be dynamically loaded here -->
 		<header id="header-container"></header>
 
-		<!-- Page content will be dynamically loaded here -->
 		<main
 			id="page-container"
 			class="min-h-screen"></main>
 
-		<!-- Footer will be dynamically loaded here -->
 		<footer id="footer-container"></footer>
 
-		<!-- Main script to handle routing and dynamic loading -->
 		<script
 			type="module"
-			src="src/js/main.js"></script>
+			src="/src/js/main.js"></script>
 	</body>
 </html>
