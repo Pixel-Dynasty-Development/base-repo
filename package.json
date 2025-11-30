@@ -4,6 +4,7 @@
   "description": "Repo Description",
   "scripts": {
     "dev": "vite --open",
+    "build": "vite build",
     "preview": "vite build && vite preview --open",
     "format": "prettier --write \"**/*.{js,json,md,html,css}\""
   },
