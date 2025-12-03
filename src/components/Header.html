@@ -1,76 +1,75 @@
-<div class="bg-primary text-white shadow-md sticky top-0 z-50">
-	<div class="container mx-auto px-4 sm:px-6 lg:px-8">
-		<div class="flex items-center justify-between h-20">
-			<!-- Logo -->
-			<div class="flex-shrink-0">
-				<a
-					href="#home"
-					class="text-2xl font-bold tracking-wider">
-					<span class="text-secondary">P</span>ixel
-					<span class="text-accent">D</span>ynasty
-				</a>
-			</div>
+<div class="bg-primary sticky top-0 z-50 text-white shadow-md">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex h-20 items-center justify-between">
+      <!-- Logo -->
+      <div class="shrink-0">
+        <a href="#home" class="text-2xl font-bold tracking-wider">
+          <span class="text-secondary">P</span>ixel
+          <span class="text-accent">D</span>ynasty
+        </a>
+      </div>
 
-			<!-- Desktop Navigation -->
-			<nav class="hidden md:flex space-x-8">
-				<a
-					href="#home"
-					class="nav-link text-lg font-medium hover:text-secondary transition duration-300"
-					>Home</a
-				>
-				<a
-					href="#about"
-					class="nav-link text-lg font-medium hover:text-secondary transition duration-300"
-					>About</a
-				>
-				<a
-					href="#contact"
-					class="nav-link text-lg font-medium hover:text-secondary transition duration-300"
-					>Contact</a
-				>
-			</nav>
+      <!-- Desktop Navigation -->
+      <nav class="hidden space-x-8 md:flex">
+        <a
+          href="#home"
+          class="nav-link hover:text-secondary text-lg font-medium transition duration-300"
+          >Home</a
+        >
+        <a
+          href="#about"
+          class="nav-link hover:text-secondary text-lg font-medium transition duration-300"
+          >About</a
+        >
+        <a
+          href="#contact"
+          class="nav-link hover:text-secondary text-lg font-medium transition duration-300"
+          >Contact</a
+        >
+      </nav>
 
-			<!-- Mobile Menu Button -->
-			<div class="md:hidden">
-				<button
-					id="mobile-menu-button"
-					class="text-white hover:text-secondary focus:outline-none">
-					<svg
-						class="h-6 w-6"
-						fill="none"
-						viewBox="0 0 24 24"
-						stroke="currentColor">
-						<path
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							stroke-width="2"
-							d="M4 6h16M4 12h16m-7 6h7" />
-					</svg>
-				</button>
-			</div>
-		</div>
-	</div>
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden">
+        <button
+          id="mobile-menu-button"
+          class="hover:text-secondary text-white focus:outline-none"
+        >
+          <svg
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
 
-	<!-- Mobile Navigation -->
-	<div
-		id="mobile-menu"
-		class="hidden md:hidden bg-primary/95 backdrop-blur-sm">
-		<nav class="px-2 pt-2 pb-4 space-y-1 sm:px-3 text-center">
-			<a
-				href="#home"
-				class="nav-link block px-3 py-2 rounded-md text-base font-medium hover:bg-secondary transition duration-300"
-				>Home</a
-			>
-			<a
-				href="#about"
-				class="nav-link block px-3 py-2 rounded-md text-base font-medium hover:bg-secondary transition duration-300"
-				>About</a
-			>
-			<a
-				href="#contact"
-				class="nav-link block px-3 py-2 rounded-md text-base font-medium hover:bg-secondary transition duration-300"
-				>Contact</a
-			>
-		</nav>
-	</div>
+  <!-- Mobile Navigation -->
+  <div id="mobile-menu" class="bg-primary/95 hidden backdrop-blur-sm md:hidden">
+    <nav class="space-y-1 px-2 pt-2 pb-4 text-center sm:px-3">
+      <a
+        href="#home"
+        class="nav-link hover:bg-secondary block rounded-md px-3 py-2 text-base font-medium transition duration-300"
+        >Home</a
+      >
+      <a
+        href="#about"
+        class="nav-link hover:bg-secondary block rounded-md px-3 py-2 text-base font-medium transition duration-300"
+        >About</a
+      >
+      <a
+        href="#contact"
+        class="nav-link hover:bg-secondary block rounded-md px-3 py-2 text-base font-medium transition duration-300"
+        >Contact</a
+      >
+    </nav>
+  </div>
 </div>
