@@ -1,21 +1,25 @@
 // tailwind.config.js
 module.exports = {
-  purge: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
-  darkMode: true, // or 'media' or 'class'
+  purge: [
+    "./index.html",
+    "./src/**/*.{html,js,ts,jsx,tsx}",
+    "./src/pages/**/*.html",
+    "./src/components/**/*.html",
+    "./src/portals/**/*.html",
+  ],
+  darkMode: "media", // or 'media' or 'class'
   theme: {
-    extends: {
-      fontFamily: {
-        sans: ["Inter", "sans-serif"],
+    extend: {},
+    colors: {
+      primary: "#111827",
+      test: {
+        light: "#6b7280",
+        DEFAULT: "#374151",
+        dark: "#1f2937",
       },
-      colors: {
-        primary: "#111827",
-        "primary-hover": "#1f2937",
-        secondary: "#3b82f6",
-        accent: "#10b981",
-        background: "#f9fafb",
-        "text-base": "#111827",
-        "text-muted": "#6b7280",
-      },
+      secondary: "#3b82f6",
+      accent: "#10b981",
+      background: "#f9fafb",
     },
   },
   variants: {
