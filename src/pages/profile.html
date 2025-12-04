@@ -1,10 +1,87 @@
-<section class="py-20">
-  <div class="container mx-auto px-4 text-center sm:px-6 lg:px-8">
+<section class="py-16">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <h1
-      class="text-primary mb-4 text-4xl leading-tight font-extrabold md:text-6xl"
+      class="text-text-default dark:text-text-default-dark mb-8 text-3xl font-bold"
     >
-      Profile Page
+      Welcome Back, Client!
     </h1>
-    <h2 id="profile-username" class="text-secondary text-3xl font-bold"></h2>
+
+    <div class="border-default dark:border-border-dark mb-8 border-b">
+      <nav class="-mb-px flex space-x-8" aria-label="Tabs">
+        <a
+          href="#"
+          class="border-primary dark:border-primary-dark text-primary dark:text-primary-dark border-b-2 px-1 py-4 text-sm font-medium whitespace-nowrap"
+        >
+          Dashboard
+        </a>
+        <a
+          href="#"
+          class="text-text-secondary dark:text-text-secondary-dark hover:border-default hover:text-text-default dark:hover:border-border-dark dark:hover:text-text-default-dark border-b-2 border-transparent px-1 py-4 text-sm font-medium whitespace-nowrap"
+        >
+          Project Status
+        </a>
+        <a
+          href="#"
+          class="text-text-secondary dark:text-text-secondary-dark hover:border-default hover:text-text-default dark:hover:border-border-dark dark:hover:text-text-default-dark border-b-2 border-transparent px-1 py-4 text-sm font-medium whitespace-nowrap"
+        >
+          Settings
+        </a>
+      </nav>
+    </div>
+
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+      <div
+        class="bg-surface dark:bg-bg-surface-dark border-default dark:border-border-dark rounded-lg border p-6 shadow-md md:col-span-2"
+      >
+        <h2
+          class="text-text-default dark:text-text-default-dark mb-4 text-2xl font-semibold"
+        >
+          Client Overview
+        </h2>
+        <p class="text-text-secondary dark:text-text-secondary-dark mb-4">
+          Your current web project is **on track** for the Q3 milestone. Check
+          the Project Status tab for detailed notes and links to staging
+          environments.
+        </p>
+        <a
+          href="#"
+          class="text-secondary dark:text-secondary-dark text-sm font-medium hover:underline"
+        >
+          View Project Documentation &rarr;
+        </a>
+      </div>
+
+      <div
+        class="bg-surface dark:bg-bg-surface-dark border-default dark:border-border-dark rounded-lg border p-6 shadow-md"
+      >
+        <div class="mb-4 flex items-center space-x-4">
+          <div
+            class="bg-primary dark:bg-primary-dark flex h-10 w-10 items-center justify-center rounded-full font-bold text-white"
+          >
+            JD
+          </div>
+          <div>
+            <p
+              class="text-text-default dark:text-text-default-dark font-medium"
+            >
+              Jane Doe (Client)
+            </p>
+            <p
+              class="text-text-secondary dark:text-text-secondary-dark text-sm"
+            >
+              jane@clientco.com
+            </p>
+          </div>
+        </div>
+
+        <hr class="border-default dark:border-border-dark my-4" />
+
+        <button
+          class="w-full rounded-lg bg-red-600 px-4 py-2 font-bold text-white transition hover:bg-red-700"
+        >
+          Log Out
+        </button>
+      </div>
+    </div>
   </div>
 </section>

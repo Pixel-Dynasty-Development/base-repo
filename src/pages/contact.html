@@ -1,14 +1,166 @@
 <section class="py-20">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="mb-12 text-center">
-      <h2 class="text-primary text-4xl font-extrabold">Contact Us</h2>
-      <p class="text-text-muted mt-4 text-xl">
-        This is the contact page. Edit this content in
-        <code class="rounded bg-gray-200 p-1 text-sm">pages/contact.html</code>
+      <h1
+        class="text-text-default dark:text-text-default-dark mb-4 text-4xl leading-tight font-extrabold md:text-5xl"
+      >
+        Let's Build Something Efficient
+      </h1>
+      <p
+        class="text-text-secondary dark:text-text-secondary-dark mx-auto max-w-3xl text-lg"
+      >
+        Ready to discuss your project for Pixel Dynasty, The Bloom Foundation,
+        or Switch It? Fill out the form below or use our direct contact info.
       </p>
     </div>
-    <div class="mx-auto max-w-xl rounded-lg bg-white p-8 shadow-md">
-      <p>Your contact form or information can go here.</p>
+
+    <div class="grid grid-cols-1 gap-12 lg:grid-cols-3">
+      <div
+        class="bg-surface dark:bg-bg-surface-dark rounded-xl p-8 shadow-lg lg:col-span-2"
+      >
+        <h2
+          class="text-primary dark:text-primary-dark mb-6 text-2xl font-semibold"
+        >
+          Send a Message
+        </h2>
+
+        <form action="#" method="POST" class="space-y-6">
+          <div>
+            <label
+              for="name"
+              class="text-text-default dark:text-text-default-dark mb-1 block text-sm font-medium"
+              >Full Name</label
+            >
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="border-default dark:border-border-dark text-text-default dark:text-text-default-dark focus:ring-secondary focus:border-secondary w-full rounded-lg border bg-white px-4 py-2 transition dark:bg-gray-800"
+              placeholder="Your Name"
+            />
+          </div>
+
+          <div>
+            <label
+              for="email"
+              class="text-text-default dark:text-text-default-dark mb-1 block text-sm font-medium"
+              >Email Address</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="border-default dark:border-border-dark text-text-default dark:text-text-default-dark focus:ring-secondary focus:border-secondary w-full rounded-lg border bg-white px-4 py-2 transition dark:bg-gray-800"
+              placeholder="you@example.com"
+            />
+          </div>
+
+          <div>
+            <label
+              for="project"
+              class="text-text-default dark:text-text-default-dark mb-1 block text-sm font-medium"
+              >Project Type</label
+            >
+            <select
+              id="project"
+              name="project"
+              required
+              class="border-default dark:border-border-dark text-text-default dark:text-text-default-dark focus:ring-secondary focus:border-secondary w-full rounded-lg border bg-white px-4 py-2 transition dark:bg-gray-800"
+            >
+              <option value="">Select a Project Type...</option>
+              <option value="pd">
+                Pixel Dynasty Development (Client Project)
+              </option>
+              <option value="bloom">The Bloom Foundation (Non-Profit)</option>
+              <option value="switch">Switch It (Day Job)</option>
+              <option value="other">Other Inquiry</option>
+            </select>
+          </div>
+
+          <div>
+            <label
+              for="message"
+              class="text-text-default dark:text-text-default-dark mb-1 block text-sm font-medium"
+              >Message</label
+            >
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              required
+              class="border-default dark:border-border-dark text-text-default dark:text-text-default-dark focus:ring-secondary focus:border-secondary w-full rounded-lg border bg-white px-4 py-2 transition dark:bg-gray-800"
+              placeholder="Tell us about your needs and deadline."
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="bg-accent dark:bg-accent-dark w-full rounded-lg px-6 py-3 font-bold text-white shadow-md transition hover:opacity-90 md:w-auto"
+          >
+            Send Inquiry
+          </button>
+        </form>
+      </div>
+
+      <div
+        class="border-default dark:border-border-dark border-l p-8 lg:border-none"
+      >
+        <h2
+          class="text-text-default dark:text-text-default-dark mb-6 text-2xl font-semibold"
+        >
+          Direct Contact
+        </h2>
+
+        <div class="space-y-6">
+          <div>
+            <p class="text-primary dark:text-primary-dark font-medium">Email</p>
+            <a
+              href="mailto:contact@pixelDynasty.dev"
+              class="text-text-secondary dark:text-text-secondary-dark hover:text-secondary dark:hover:text-secondary-dark"
+            >
+              contact@pixelDynasty.dev
+            </a>
+          </div>
+
+          <div>
+            <p class="text-primary dark:text-primary-dark font-medium">
+              Location
+            </p>
+            <p class="text-text-secondary dark:text-text-secondary-dark">
+              United States (EST/EDT)
+            </p>
+          </div>
+
+          <div>
+            <p class="text-primary dark:text-primary-dark font-medium">
+              Social
+            </p>
+            <a
+              href="#"
+              class="text-text-secondary dark:text-text-secondary-dark hover:text-secondary dark:hover:text-secondary-dark"
+            >
+              LinkedIn Profile
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="border-accent dark:border-accent-dark mt-8 rounded-lg border bg-white p-4 dark:bg-gray-800"
+        >
+          <p
+            class="text-text-default dark:text-text-default-dark text-sm font-medium"
+          >
+            Need a custom 3D print idea prototyped?
+          </p>
+          <p
+            class="text-text-secondary dark:text-text-secondary-dark mt-1 text-xs"
+          >
+            We use the Ender 3 base for rapid prototyping in-house.
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
