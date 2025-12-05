@@ -1,7 +1,8 @@
 // main.js
 
 import { initializeRouter } from "./router.js";
-import { loadHTML } from "./utils/html-loader.js"; // ⬅️ NEW: Import utility
+import { loadHTML } from "./utils/html-loader.js";
+import config from "/config.json"; // ⬅️ Import config
 
 // Start the application when the DOM is ready
 document.addEventListener("DOMContentLoaded", () => {
@@ -9,10 +10,13 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /**
- * Loads persistent components and initializes the router.
+ * Loads persistent components, sets colors, and initializes the router.
  */
 async function initializeApp() {
-  // 1. Get main containers
+  // 1. Apply Brand Colors from Config
+  applyThemeColors();
+
+  // 2. Get main containers
   const pageContainer = document.getElementById("page-container");
   const headerContainer = document.getElementById("header-container");
   const footerContainer = document.getElementById("footer-container");
@@ -24,28 +28,45 @@ async function initializeApp() {
     return;
   }
 
-  // 2. Define the routes
+  // 3. Define the routes
   const routes = {
-    "/": "src/pages/home.html", // Use "/" for the root path
+    "/": "src/pages/home.html",
     "/about": "src/pages/about.html",
     "/contact": "src/pages/contact.html",
     "/signin": "src/portals/login.html",
     // Add more routes as needed
   };
 
-  // 3. Load the persistent components (header and footer)
-  // We use the imported loadHTML utility
+  // 4. Load the persistent components (header and footer)
   await Promise.all([
     loadHTML("./src/components/Header.html", headerContainer),
     loadHTML("./src/components/Footer.html", footerContainer),
   ]);
 
-  // 4. Add event listeners for the newly loaded header
+  // 5. Add event listeners for the newly loaded header
   initializeHeaderListeners();
 
-  // 5. Initialize the router
-  // We pass the routes and the page container, but the router will import loadHTML itself.
+  // 6. Initialize the router
   initializeRouter(routes, pageContainer);
+}
+
+/**
+ * Overrides CSS variables with values from config.json
+ */
+function applyThemeColors() {
+  const root = document.documentElement;
+  const colors = config.colors;
+
+  if (colors) {
+    if (colors.primary)
+      root.style.setProperty("--color-primary", colors.primary);
+    if (colors.secondary)
+      root.style.setProperty("--color-secondary", colors.secondary);
+    if (colors.accent) root.style.setProperty("--color-accent", colors.accent);
+    if (colors.bgPage) root.style.setProperty("--color-bg-page", colors.bgPage);
+    if (colors.textDefault)
+      root.style.setProperty("--color-text-default", colors.textDefault);
+  }
 }
 
 /**
