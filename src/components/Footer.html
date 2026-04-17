@@ -1,21 +1,21 @@
 <footer
   role="contentinfo"
-  class="border-default dark:border-border-dark border-t pt-12 pb-6"
+  class="border-default border-t pt-12 pb-6 dark:border-border-dark"
 >
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div
-      class="border-default dark:border-border-dark grid grid-cols-2 gap-8 border-b pb-10 md:grid-cols-4 lg:grid-cols-5"
+      class="border-default grid grid-cols-2 gap-8 border-b pb-10 md:grid-cols-4 lg:grid-cols-5 dark:border-border-dark"
     >
       <div class="col-span-2 lg:col-span-2">
         <a
           href="/"
           data-route
-          class="text-primary dark:text-primary-dark mb-4 block text-2xl font-bold"
+          class="mb-4 block text-2xl font-bold text-primary dark:text-primary-dark"
         >
           {{businessName}}
         </a>
         <p
-          class="text-text-secondary dark:text-text-secondary-dark max-w-xs text-sm"
+          class="max-w-xs text-sm text-text-secondary dark:text-text-secondary-dark"
         >
           Building custom, high-speed web solutions with an efficient,
           client-first approach. We power your digital future.
@@ -24,7 +24,7 @@
 
       <div>
         <h3
-          class="text-text-default dark:text-text-default-dark mb-4 text-lg font-semibold"
+          class="mb-4 text-lg font-semibold text-text-default dark:text-text-default-dark"
         >
           Quick Links
         </h3>
@@ -33,7 +33,7 @@
             <a
               href="/"
               data-route
-              class="text-text-secondary dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary-dark text-sm transition"
+              class="text-sm text-text-secondary transition hover:text-primary dark:text-text-secondary-dark dark:hover:text-primary-dark"
               >Home</a
             >
           </li>
@@ -41,7 +41,7 @@
             <a
               href="/about"
               data-route
-              class="text-text-secondary dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary-dark text-sm transition"
+              class="text-sm text-text-secondary transition hover:text-primary dark:text-text-secondary-dark dark:hover:text-primary-dark"
               >About Us</a
             >
           </li>
@@ -49,7 +49,7 @@
             <a
               href="/contact"
               data-route
-              class="text-text-secondary dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary-dark text-sm transition"
+              class="text-sm text-text-secondary transition hover:text-primary dark:text-text-secondary-dark dark:hover:text-primary-dark"
               >Contact</a
             >
           </li>
@@ -58,7 +58,7 @@
 
       <div>
         <h3
-          class="text-text-default dark:text-text-default-dark mb-4 text-lg font-semibold"
+          class="mb-4 text-lg font-semibold text-text-default dark:text-text-default-dark"
         >
           Our Focus
         </h3>
@@ -66,21 +66,21 @@
           <li>
             <a
               href="#"
-              class="text-text-secondary dark:text-text-secondary-dark hover:text-secondary dark:hover:text-secondary-dark text-sm transition"
+              class="text-sm text-text-secondary transition hover:text-secondary dark:text-text-secondary-dark dark:hover:text-secondary-dark"
               >Pixel Dynasty Clients</a
             >
           </li>
           <li>
             <a
               href="#"
-              class="text-text-secondary dark:text-text-secondary-dark hover:text-secondary dark:hover:text-secondary-dark text-sm transition"
+              class="text-sm text-text-secondary transition hover:text-secondary dark:text-text-secondary-dark dark:hover:text-secondary-dark"
               >The Bloom Foundation</a
             >
           </li>
           <li>
             <a
               href="#"
-              class="text-text-secondary dark:text-text-secondary-dark hover:text-secondary dark:hover:text-secondary-dark text-sm transition"
+              class="text-sm text-text-secondary transition hover:text-secondary dark:text-text-secondary-dark dark:hover:text-secondary-dark"
               >Switch It Partners</a
             >
           </li>
@@ -89,19 +89,19 @@
 
       <div class="col-span-2 md:col-span-1">
         <h3
-          class="text-text-default dark:text-text-default-dark mb-4 text-lg font-semibold"
+          class="mb-4 text-lg font-semibold text-text-default dark:text-text-default-dark"
         >
           Get In Touch
         </h3>
         <p
-          class="text-text-secondary dark:text-text-secondary-dark mb-3 text-sm"
+          class="mb-3 text-sm text-text-secondary dark:text-text-secondary-dark"
         >
           We respond to all inquiries quickly and efficiently.
         </p>
         <a
           href="/contact"
           data-route
-          class="text-accent dark:text-accent-dark text-sm font-medium hover:underline"
+          class="text-sm font-medium text-accent hover:underline dark:text-accent-dark"
         >
           Send Us a Message
         </a>
@@ -109,11 +109,11 @@
     </div>
 
     <div
-      class="text-text-secondary dark:text-text-secondary-dark mt-6 flex items-center justify-between text-sm"
+      class="mt-6 flex items-center justify-between text-sm text-text-secondary dark:text-text-secondary-dark"
     >
       <p>
-        &copy; <span id="current-year"></span> {{businessName}}. All rights
-        reserved.
+        &copy; {{foundingYear}} -
+        <span id="current-year"> </span> {{businessName}}. All rights reserved.
       </p>
       <p class="hidden sm:block">Built for efficiency.</p>
     </div>
@@ -122,6 +122,6 @@
 
 <script>
   // Set current year dynamically for copyright
-  document.getElementById("current-year").textContent =
-    new Date().getFullYear();
+  // document.getElementById("current-year").textContent =
+  //   new Date().getFullYear();
 </script>

@@ -45,6 +45,9 @@ async function initializeApp() {
 
   // 5. Add event listeners for the newly loaded header
   initializeHeaderListeners();
+  // Load current year into footer
+  document.getElementById("current-year").textContent =
+    new Date().getFullYear();
 
   // 6. Initialize the router
   initializeRouter(routes, pageContainer);
