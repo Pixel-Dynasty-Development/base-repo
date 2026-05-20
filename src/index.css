@@ -1,45 +1,37 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
-  /* ================================== */
-  /* ☀️ LIGHT MODE BASE COLORS          */
-  /* ================================== */
+  /* This creates bg-main-bg, text-main-bg, etc. */
+  --color-main-bg: var(--main-bg);
+  --color-surface: var(--surface);
+  --color-main-text: var(--main-text);
+  --color-muted-text: var(--muted-text);
+  --color-border-subtle: var(--border-subtle);
 
-  /* Primary Brand Color (e.g., Main buttons, Headers, Logo) */
-  --color-primary: #1d4ed8;
-  /* Secondary Brand Color (e.g., Links, Secondary actions) */
-  --color-secondary: #60a5fa;
-  /* High-Visibility Accent (e.g., CTA buttons, Notifications) */
-  --color-accent: #f59e0b;
+  /* Brand Colors */
+  --color-primary: #e633b6;
+  --color-secondary: #00d4ff;
 
-  /* Text Colors */
-  --color-text-default: #0f172a; /* Main text, H1 */
-  --color-text-secondary: #475569; /* Supporting text, captions */
-
-  /* Backgrounds & Surfaces */
-  --color-bg-page: #ffffff; /* Main page background */
-  --color-bg-surface: #f1f5f9; /* Card backgrounds, alternate sections */
-
-  /* Borders & Dividers */
-  --color-border: #e2e8f0; /* Subtle borders, lines */
-
-  /* ================================== */
-  /* 🌑 DARK MODE OVERRIDE COLORS      */
-  /* ================================== */
-
-  /* Apply a neutral dark mode palette (Slate/Gray) as a placeholder */
-
-  --color-primary-dark: #3b82f6;
-  --color-secondary-dark: #6366f1;
-  --color-accent-dark: #fbbf24;
-
-  --color-text-default-dark: #f1f5f9;
-  --color-text-secondary-dark: #94a3b8;
-
-  --color-bg-page-dark: #0f172a;
-  --color-bg-surface-dark: #1e293b;
-
-  --color-border-dark: #334155;
+  /* Custom Radius for rounded-custom */
+  --radius-custom: 12px;
 }
 
+/* Now define the actual values for those variables here */
+:root {
+  --main-bg: #ffffff;
+  --surface: #f8fafc;
+  --main-text: #0f172a;
+  --muted-text: #475569;
+  --border-subtle: #e2e8f0;
+}
 
+.dark {
+  --main-bg: #0b0f1a;
+  --surface: #161b2a;
+  --main-text: #f1f5f9;
+  --muted-text: #94a3b8;
+  --border-subtle: #1e293b;
+}
+
+/* Master class-based toggle for Tailwind 4 */
+@custom-variant dark (&:where(.dark, .dark *));

@@ -1,0 +1,40 @@
+{
+  "enabled": false,
+  "label": "Menu",
+  "path": "/menu",
+  "description": "Browse our curated menu selections, available for pickup and delivery.",
+  "categories": [
+    {
+      "name": "Starters",
+      "description": "Light bites to begin your meal.",
+      "items": [
+        {
+          "name": "Smoked Cauliflower",
+          "price": "$9",
+          "description": "Charred cauliflower with lemon aioli and herbs."
+        },
+        {
+          "name": "Spiced Chickpea Hummus",
+          "price": "$8",
+          "description": "Creamy hummus with warm pita chips and olives."
+        }
+      ]
+    },
+    {
+      "name": "Main Plates",
+      "description": "Satisfying entrees crafted for every appetite.",
+      "items": [
+        {
+          "name": "Pan-Seared Salmon",
+          "price": "$22",
+          "description": "Served with seasonal greens and citrus beurre blanc."
+        },
+        {
+          "name": "Herb-Roasted Chicken",
+          "price": "$19",
+          "description": "Roasted with rosemary, garlic, and winter vegetables."
+        }
+      ]
+    }
+  ]
+}

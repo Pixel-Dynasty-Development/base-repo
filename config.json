@@ -18,6 +18,27 @@
       "linkedin": "https://linkedin.com/company/pixeldynasty"
     }
   },
+  "navigation": [
+    { "name": "Home", "path": "/", "component": "home" },
+    { "name": "About", "path": "/about", "component": "about" },
+    { "name": "Contact", "path": "/contact", "component": "contact" },
+    { "name": "Menu", "path": "/menu", "component": "menu" },
+    { "name": "Services", "path": "/services", "component": "services" },
+    { "name": "FAQ", "path": "/faq", "component": "faq" },
+    { "name": "Pricing", "path": "/pricing", "component": "pricing" }
+  ],
+  "testimonials": [
+    {
+      "author": "John Doe",
+      "role": "CEO of TechCorp",
+      "quote": "Pixel Dynasty made our site 2x faster!"
+    },
+    {
+      "author": "Jane Smith",
+      "role": "Director at Bloom",
+      "quote": "Efficient, professional, and reliable."
+    }
+  ],
   "theme": {
     "brand": {
       "primary": "#e633b6",
@@ -56,7 +77,11 @@
     "blog": false,
     "testimonials": true,
     "contactForm": true,
-    "newsletter": false
+    "newsletter": false,
+    "onlineMenu": true,
+    "serviceListings": true,
+    "faqs": true,
+    "pricingTable": true
   },
   "layout": {
     "maxWidth": "1280px",

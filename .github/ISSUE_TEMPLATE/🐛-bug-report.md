@@ -1,9 +1,9 @@
 ---
 name: "\U0001F41B Bug Report"
 about: Something isn't working as expected.
-title: "[BUG] - "
+title: '[BUG] - '
 labels: bug
-assignees: ""
+assignees: ''
 type: Bug
 ---
 

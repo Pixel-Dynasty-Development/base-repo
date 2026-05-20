@@ -1,40 +1,25 @@
 {
-  "name": "repo-title",
-  "version": "0.1.0",
-  "description": "Repo Description",
+  "name": "pixel-dynasty-template",
+  "version": "0.1.8",
   "type": "module",
   "scripts": {
     "dev": "vite --open",
     "build": "vite build",
-    "preview": "vite build && vite preview --open",
-    "format": "prettier --write \"**/*.{js,json,md,html,css}\""
+    "preview": "vite preview --open",
+    "format": "prettier --write \"**/*.{js,json,md,html,css,vue}\""
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/your-username/repository-name.git"
-  },
-  "keywords": [
-    "web-development",
-    "template",
-    "pixel-dynasty",
-    "vanilla-js",
-    "tailwind-css"
-  ],
   "author": "Pixel Dynasty Development",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/your-username/repository-name/issues"
-  },
-  "homepage": "https://github.com/your-username/repository-name#readme",
   "devDependencies": {
-    "eslint": "^8.45.0",
-    "glob": "^11.1.0",
+    "@tailwindcss/vite": "^4.1.17",
+    "@vitejs/plugin-vue": "^6.0.6",
     "prettier": "^3.7.4",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "tailwindcss": "^4.1.17",
     "vite": "^7.2.6"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.1.17"
+    "vue": "^3.5.34",
+    "vue-router": "^4.2.0"
   }
 }
