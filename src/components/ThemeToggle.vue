@@ -15,13 +15,7 @@ const toggleTheme = () => {
 }
 
 onMounted(() => {
-  const saved = localStorage.getItem('theme')
-  const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-
-  if (saved === 'dark' || (!saved && systemDark)) {
-    isDark.value = true
-    document.documentElement.classList.add('dark')
-  }
+  isDark.value = document.documentElement.classList.contains('dark')
 })
 </script>
 

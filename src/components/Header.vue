@@ -15,7 +15,7 @@ const toggleMenu = () => {
   >
     <div
       class="mx-auto flex h-16 items-center justify-between px-4"
-      :style="{ maxWidth: $config.layout.maxWidth }"
+      :style="{ maxWidth: $theme.layout.maxWidth }"
     >
       <router-link to="/" class="flex items-center gap-2">
         <span class="text-primary text-xl font-bold tracking-tight">

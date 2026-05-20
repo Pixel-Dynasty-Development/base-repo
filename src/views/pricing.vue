@@ -32,25 +32,25 @@ const plans = [
   },
 ]
 
-const faqs = [
-  {
-    question: 'Can I change the pricing labels to hourly or project-based?',
-    answer:
-      'Yes. These cards are intentionally flexible and can be adapted to hourly, fixed-fee, or retainer pricing models.',
-  },
-  {
-    question: 'Is the plan information easy to update?',
-    answer:
-      'Absolutely. Just swap out the plan objects here or drive them from a content file for more advanced setups.',
-  },
-]
+// const faqs = [
+//   {
+//     question: 'Can I change the pricing labels to hourly or project-based?',
+//     answer:
+//       'Yes. These cards are intentionally flexible and can be adapted to hourly, fixed-fee, or retainer pricing models.',
+//   },
+//   {
+//     question: 'Is the plan information easy to update?',
+//     answer:
+//       'Absolutely. Just swap out the plan objects here or drive them from a content file for more advanced setups.',
+//   },
+// ]
 </script>
 
 <template>
   <div class="py-16 md:py-24">
     <div
       class="mx-auto px-4 sm:px-6 lg:px-8"
-      :style="{ maxWidth: $config.layout.maxWidth }"
+      :style="{ maxWidth: $theme.layout.maxWidth }"
     >
       <SectionHeading
         eyebrow="Pricing"
@@ -68,7 +68,7 @@ const faqs = [
           description="Answer common objections up front and make it easier for prospects to choose the right plan."
         />
         <div class="mt-10">
-          <FAQAccordion :faqs="faqs" />
+          <FAQAccordion :faqs="$config.faqs" />
         </div>
       </div>
     </div>

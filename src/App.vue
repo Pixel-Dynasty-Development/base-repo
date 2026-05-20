@@ -6,11 +6,11 @@ import Footer from './components/Footer.vue'
 
 <template>
   <div class="bg-main-bg text-main-text flex min-h-screen flex-col">
-    <Header :class="{ 'sticky top-0 z-50': $config.layout.navSticky }" />
+    <Header :class="{ 'sticky top-0 z-50': $theme.layout.navSticky }" />
 
     <main
       class="container mx-auto grow px-4 py-8"
-      :style="{ maxWidth: $config.layout.maxWidth }"
+      :style="{ maxWidth: $theme.layout.maxWidth }"
     >
       <router-view v-slot="{ Component }">
         <transition name="fade" mode="out-in">

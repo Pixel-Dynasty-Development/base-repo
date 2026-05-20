@@ -16,7 +16,7 @@ const members = [
     <section class="bg-main-bg py-20 transition-colors">
       <div
         class="container mx-auto px-4 text-center sm:px-6 lg:px-8"
-        :style="{ maxWidth: $config.layout.maxWidth }"
+        :style="{ maxWidth: $theme.layout.maxWidth }"
       >
         <p class="text-secondary mb-2 text-lg font-semibold">Our Story</p>
 
@@ -48,7 +48,7 @@ const members = [
     <section class="bg-surface py-16 transition-colors">
       <div
         class="container mx-auto px-4 sm:px-6 lg:px-8"
-        :style="{ maxWidth: $config.layout.maxWidth }"
+        :style="{ maxWidth: $theme.layout.maxWidth }"
       >
         <h2 class="text-main-text mb-12 text-center text-3xl font-bold">
           The {{ $config.businessName }} Difference
@@ -102,17 +102,17 @@ const members = [
     <section class="bg-main-bg py-16 transition-colors">
       <div
         class="container mx-auto px-4 text-center sm:px-6 lg:px-8"
-        :style="{ maxWidth: $config.layout.maxWidth }"
+        :style="{ maxWidth: $theme.layout.maxWidth }"
       >
     <h2>Meet the Team</h2>
-    <team-cards :members="members" />
+    <team-cards :members="$config.members" />
     </div>
     </section>
 
     <section class="bg-main-bg py-16 transition-colors">
       <div
         class="container mx-auto px-4 text-center sm:px-6 lg:px-8"
-        :style="{ maxWidth: $config.layout.maxWidth }"
+        :style="{ maxWidth: $theme.layout.maxWidth }"
       >
         <h2 class="text-main-text mb-4 text-3xl font-bold">
           Working Across Key Sectors

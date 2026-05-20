@@ -2,7 +2,7 @@
   <footer class="bg-surface border-border-subtle mt-auto border-t">
     <div
       class="mx-auto px-4 py-12 md:flex md:items-center md:justify-between"
-      :style="{ maxWidth: $config.layout.maxWidth }"
+      :style="{ maxWidth: $theme.layout.maxWidth }"
     >
       <div class="space-y-2">
         <p class="text-primary text-lg font-bold">{{ $config.businessName }}</p>

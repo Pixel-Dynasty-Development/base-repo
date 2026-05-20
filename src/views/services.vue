@@ -36,7 +36,7 @@ const stats = [
   <div class="py-16 md:py-24">
     <div
       class="mx-auto px-4 sm:px-6 lg:px-8"
-      :style="{ maxWidth: $config.layout.maxWidth }"
+      :style="{ maxWidth: $theme.layout.maxWidth }"
     >
       <SectionHeading
         eyebrow="Our Services"
