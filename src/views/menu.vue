@@ -1,7 +1,7 @@
 <script setup>
 import { inject } from 'vue'
 import OnlineMenu from '../components/OnlineMenu.vue'
-import menuFallback from '../assets/menu.json'
+import menuFallback from '../../config/menu.json'
 
 const config = inject('config') || {}
 const menuData = config.menu || menuFallback

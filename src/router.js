@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import metadata from '../config/metadata.json'
 import navigation from '../config/navigation.json'
 import features from '../config/features.json'
-import menuData from './assets/menu.json'
+import menuData from '../config/menu.json'
 
 const views = import.meta.glob('./views/*.vue')
 

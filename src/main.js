@@ -3,7 +3,7 @@ import App from './App.vue'
 import router from './router.js'
 import configIndex from '../config/index.json' // index that references the modular config files
 import './index.css'
-import themeConfig from './assets/theme.json'
+import themeConfig from '../config/theme.json'
 
 // Explicit static imports for config files (works in dev and production)
 import metadata from '../config/metadata.json'

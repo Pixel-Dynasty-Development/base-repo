@@ -1,8 +1,8 @@
 <script setup>
-import { computed } from 'vue'
-import menuData from '../assets/menu.json'
+import { computed, inject } from 'vue'
 
-const menu = menuData || {}
+const config = inject('config') || {}
+const menu = config.menu || {}
 const sections = computed(() => {
   if (Array.isArray(menu.categories) && menu.categories.length) {
     return menu.categories
