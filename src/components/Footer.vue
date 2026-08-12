@@ -5,9 +5,9 @@
       :style="{ maxWidth: $theme.layout.maxWidth }"
     >
       <div class="space-y-2">
-        <p class="text-primary text-lg font-bold">{{ $config.businessName || $config.metadata?.displayName || 'Business' }}</p>
-        <p class="text-muted-text text-sm">© {{ $config.foundingYear || $config.metadata?.foundingYear || new Date().getFullYear() }} - {{ new Date().getFullYear() }}</p>
-        <p v-if="$config.contact?.address?.display" class="text-muted-text text-sm">{{ $config.contact.address.display }}</p>
+        <p class="text-primary text-lg font-bold">{{ $config.metadata?.displayName || $config.metadata?.businessName || 'Business' }}</p>
+        <p class="text-muted-text text-sm">© {{ $config.metadata?.foundingYear || $config.foundingYear || new Date().getFullYear() }} - {{ new Date().getFullYear() }}</p>
+        <p v-if="$config.contact?.address?.display" class="text-muted-text text-sm">{{ $config.contact?.address?.display || $config.contact?.addressLine }}</p>
       </div>
 
       <div class="mt-8 flex gap-6 md:mt-0">

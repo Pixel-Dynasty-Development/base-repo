@@ -22,13 +22,13 @@ const itemCount = computed(() => cartStore.itemCount?.value || 0)
     >
       <router-link to="/" class="flex items-center gap-2">
         <span class="text-primary text-xl font-bold tracking-tight">
-          {{ $config.businessName }}
+          {{ $config.metadata?.displayName || $config.metadata?.businessName || 'Business' }}
         </span>
       </router-link>
 
       <nav class="hidden items-center gap-6 md:flex">
         <router-link
-          v-for="link in $config.navigation"
+          v-for="link in ($config.navigation || [])"
           :key="link.path"
           :to="link.path"
           class="text-main-text hover:text-primary text-sm font-medium transition-colors"
