@@ -1,11 +1,12 @@
 {
   "id": "features",
+  "onboarding": true,
   "darkMode": true,
   "blog": true,
   "testimonials": true,
   "contactForm": true,
   "newsletter": true,
-  "onlineOrdering": true,
+  "teamMembers": true,
   "shop": true,
   "serviceListings": false,
   "faqs": true,

@@ -28,7 +28,7 @@
         "twitter": { "type": "string", "format": "uri" },
         "linkedin": { "type": "string", "format": "uri" }
       },
-      "additionalProperties": false
+      "additionalProperties": true
     }
   },
   "additionalProperties": false

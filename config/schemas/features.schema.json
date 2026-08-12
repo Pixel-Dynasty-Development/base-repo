@@ -6,6 +6,7 @@
   "properties": {
     "id": { "type": "string" },
     "darkMode": { "type": "boolean" },
+    "onboarding": { "type": "boolean" },
     "blog": { "type": "boolean" },
     "testimonials": { "type": "boolean" },
     "contactForm": { "type": "boolean" },

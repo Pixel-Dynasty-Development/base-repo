@@ -8,6 +8,7 @@
     "currency": { "type": "string" },
     "locale": { "type": "string" },
     "taxIncluded": { "type": "boolean" },
+    "cartEnabled": { "type": "boolean" },
     "products": {
       "type": "array",
       "items": {
