@@ -1,0 +1,23 @@
+{
+  "id": "metadata",
+  "businessName": "Harbor & Hearth Coffee Co.",
+  "displayName": "Harbor & Hearth",
+  "tagline": "Craft Coffee, Warm Community",
+  "description": "Neighborhood roastery and café specializing in small-batch coffee and seasonal pastries.",
+  "url": "https://harborhearth.example",
+  "foundingYear": 2021,
+  "industry": "Food & Beverage",
+  "logo": "/assets/logo.png",
+  "version": "1.0.0",
+  "featuresHeadline": "Efficiency Obsession",
+  "featuresCopy": "Our code is clean, fast, and optimized. We believe great development minimizes overhead and maximizes performance from day one.",
+  "qualityHeadline": "Unwavering Quality",
+  "qualityCopy": "We deliver robust, well-tested solutions that stand up to modern demands.",
+  "partnershipHeadline": "Focused Partnership",
+  "partnershipCopy": "We provide clear communication and supportive collaboration across every project.",
+  "sectorsCopy": "We divide our time efficiently among client work and high-impact initiatives.",
+  "clientsCopy": "Custom web development and consulting services.",
+  "partnerCopy": "Trusted partner for local nonprofits and community events.",
+  "otherPartnerCopy": "Supporting business and community initiatives with tailored technical solutions.",
+  "updatedAt": "2026-08-11T20:16:39.594Z"
+}

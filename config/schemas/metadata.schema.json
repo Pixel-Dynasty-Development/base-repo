@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Metadata",
+  "type": "object",
+  "required": ["id", "businessName", "displayName"],
+  "properties": {
+    "id": { "type": "string" },
+    "businessName": { "type": "string" },
+    "displayName": { "type": "string" },
+    "tagline": { "type": "string" },
+    "description": { "type": "string" },
+    "url": { "type": "string", "format": "uri" },
+    "foundingYear": { "type": "integer", "minimum": 1800, "maximum": 3000 },
+    "industry": { "type": "string" },
+    "logo": { "type": "string" },
+    "version": { "type": "string" },
+    "featuresHeadline": { "type": "string" },
+    "featuresCopy": { "type": "string" },
+    "qualityHeadline": { "type": "string" },
+    "qualityCopy": { "type": "string" },
+    "partnershipHeadline": { "type": "string" },
+    "partnershipCopy": { "type": "string" },
+    "sectorsCopy": { "type": "string" },
+    "clientsCopy": { "type": "string" },
+    "partnerCopy": { "type": "string" },
+    "otherPartnerCopy": { "type": "string" },
+    "updatedAt": { "type": "string", "format": "date-time" }
+  },
+  "additionalProperties": false
+}
