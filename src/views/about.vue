@@ -27,8 +27,8 @@ import TeamCards from '../components/TeamCards.vue'
           <span class="text-4xl text-white">👤</span>
         </div>
 
-        <p class="text-primary text-lg font-semibold">{{ $config.members?.[0]?.name || $config.metadata?.businessName }}</p>
-        <p class="text-muted-text text-sm">{{ $config.members?.[0]?.role || $config.metadata?.industry }}</p>
+        <p class="text-primary text-lg font-semibold">{{ $config.team?.[0]?.name || $config.members?.[0]?.name || $config.metadata?.businessName }}</p>
+        <p class="text-muted-text text-sm">{{ $config.team?.[0]?.role || $config.members?.[0]?.role || $config.metadata?.industry }}</p>
       </div>
     </section>
 
@@ -87,7 +87,7 @@ import TeamCards from '../components/TeamCards.vue'
         :style="{ maxWidth: $theme.layout.maxWidth }"
       >
     <h2>Meet the Team</h2>
-    <team-cards :members="$config.members" />
+    <team-cards :members="$config.team || $config.members" />
     </div>
     </section>
 
@@ -109,7 +109,7 @@ import TeamCards from '../components/TeamCards.vue'
             class="bg-surface border-border-subtle rounded-custom border p-4"
           >
             <h4 class="text-primary font-bold">
-              {{ $config.businessName }} Clients
+              {{ $config.metadata?.businessName || $config.metadata?.displayName || 'Our Company' }} Clients
             </h4>
             <p class="text-muted-text text-sm">
               {{ $config.metadata?.clientsCopy || 'Custom web development and consulting services.' }}

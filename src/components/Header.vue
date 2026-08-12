@@ -114,7 +114,7 @@ const itemCount = computed(() => cartStore.itemCount?.value || 0)
       >
         <nav class="flex flex-col space-y-4 p-6">
           <router-link
-            v-for="link in $config.navigation"
+            v-for="link in ($config.navigation || [])"
             :key="link.path"
             :to="link.path"
             @click="isMenuOpen = false"

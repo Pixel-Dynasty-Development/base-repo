@@ -19,17 +19,17 @@ import ContactForm from '../components/ContactForm.vue'
         <h1
           class="text-primary text-5xl font-extrabold tracking-tight sm:text-7xl"
         >
-          {{ $config.tagline || $config.metadata?.tagline || $config.metadata?.displayName || 'Welcome' }}
+          {{ $config.metadata?.tagline || $config.metadata?.displayName || $config.tagline || 'Welcome' }}
         </h1>
         <p class="text-muted-text mx-auto mt-6 max-w-2xl text-xl leading-8">
-          {{ $config.description || $config.metadata?.description }}
+          {{ $config.metadata?.description || $config.description }}
         </p>
         <div class="mt-10 flex items-center justify-center gap-x-6">
           <router-link
             to="/about"
             class="rounded-custom bg-primary px-8 py-4 text-sm font-semibold text-white shadow-lg transition-all hover:opacity-90"
           >
-            {{ $config.metadata?.ctaLabel || 'Learn more' }}
+            {{ $config.metadata?.ctaLabel || $config.metadata?.cta || 'Learn more' }}
           </router-link>
         </div>
       </section>

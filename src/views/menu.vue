@@ -17,7 +17,7 @@ const menuData = config.menu || menuFallback
         {{ menuData.description || 'Discover our featured selections.' }}
       </h1>
       <p class="text-muted-text mx-auto mt-6 max-w-2xl text-lg leading-8">
-        {{ $config.description }}
+        {{ $config.metadata?.description || $config.description || 'Discover our offerings.' }}
       </p>
     </div>
 
