@@ -2,10 +2,10 @@
   <div>
     <div class="fixed inset-0 z-40 bg-black/40" @click="emitClose" />
 
-    <aside class="fixed right-0 top-0 h-full w-80 bg-white border-l p-4 shadow-lg z-50">
+    <aside ref="drawer" class="fixed right-0 top-0 h-full w-80 bg-white border-l p-4 shadow-lg z-50" role="dialog" aria-modal="true" aria-label="Shopping cart">
       <div class="flex items-center justify-between">
         <h3 class="text-xl font-bold">Cart ({{ itemCount }})</h3>
-        <button @click="emitClose" aria-label="Close cart" class="text-muted-text">✕</button>
+        <button ref="closeBtn" @click="emitClose" aria-label="Close cart" class="text-muted-text">✕</button>
       </div>
 
       <div v-if="items.length===0" class="mt-6 text-muted-text">Your cart is empty.</div>
@@ -35,7 +35,7 @@
 </template>
 
 <script setup>
-import { onMounted, onBeforeUnmount, inject } from 'vue'
+import { onMounted, onBeforeUnmount, inject, ref, nextTick } from 'vue'
 import cart from '../stores/cart'
 import { useRouter } from 'vue-router'
 
@@ -48,9 +48,16 @@ const itemCount = cart.itemCount
 const router = useRouter()
 
 const emit = defineEmits(['close'])
+const drawer = ref(null)
+const closeBtn = ref(null)
 
 function emitClose() {
   emit('close')
+  // return focus to last focused element stored by App before opening
+  try {
+    const last = window.__lastFocusedElement
+    if (last && typeof last.focus === 'function') last.focus()
+  } catch (e) { /* ignore */ }
 }
 
 function formatPrice(cents) {
@@ -80,8 +87,29 @@ function checkout() { router.push('/checkout'); emitClose() }
 
 function onKey(e) {
   if (e.key === 'Escape') emitClose()
+  // focus trap handling
+  if (e.key === 'Tab' && drawer.value) {
+    const focusable = drawer.value.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])')
+    if (!focusable.length) return
+    const first = focusable[0]
+    const last = focusable[focusable.length - 1]
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault()
+      last.focus()
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault()
+      first.focus()
+    }
+  }
 }
 
-onMounted(() => window.addEventListener('keydown', onKey))
+onMounted(async () => {
+  window.addEventListener('keydown', onKey)
+  await nextTick()
+  // focus the close button when drawer opens
+  try {
+    if (closeBtn.value && typeof closeBtn.value.focus === 'function') closeBtn.value.focus()
+  } catch (e) { /* ignore */ }
+})
 onBeforeUnmount(() => window.removeEventListener('keydown', onKey))
 </script>

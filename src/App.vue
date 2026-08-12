@@ -6,7 +6,13 @@ import Footer from './components/Footer.vue'
 import CartDrawer from './components/CartDrawer.vue'
 
 const cartOpen = ref(false)
-const toggleCart = () => { cartOpen.value = !cartOpen.value }
+const toggleCart = () => { 
+  // store last focused element so CartDrawer can return focus when closed
+  if (!cartOpen.value && typeof window !== 'undefined') {
+    window.__lastFocusedElement = document.activeElement
+  }
+  cartOpen.value = !cartOpen.value 
+}
 </script>
 
 <template>

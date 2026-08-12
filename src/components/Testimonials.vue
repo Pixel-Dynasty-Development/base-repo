@@ -1,7 +1,7 @@
 <template>
   <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
     <div
-      v-for="item in $config.testimonials"
+      v-for="item in ($config.testimonials || [])"
       :key="item.author"
       class="bg-surface border-border-subtle rounded-custom border p-6 shadow-sm"
     >

@@ -11,15 +11,18 @@
 </template>
 
 <script setup>
-import { toRefs } from 'vue'
+import { toRefs, inject } from 'vue'
 import cart from '../stores/cart'
 
 const props = defineProps({ product: { type: Object, required: true } })
 const { product } = toRefs(props)
 
+const config = inject('config') || {}
+const shop = config.shop || { currency: 'USD' }
+
 const formatPrice = (cents) => {
   try {
-    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(cents / 100)
+    return new Intl.NumberFormat('en-US', { style: 'currency', currency: shop.currency || 'USD' }).format(cents / 100)
   } catch (e) {
     return `$${(cents / 100).toFixed(2)}`
   }
