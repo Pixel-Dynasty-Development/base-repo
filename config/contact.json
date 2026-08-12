@@ -1,0 +1,19 @@
+{
+  "id": "contact",
+  "email": "hello@harborhearth.example",
+  "phone": "+1-555-987-6543",
+  "address": {
+    "street": "42 Pier Way",
+    "city": "Bayshore",
+    "state": "ME",
+    "postalCode": "04101",
+    "country": "USA",
+    "display": "42 Pier Way, Bayshore, ME 04101"
+  },
+  "socials": {
+    "facebook": "https://facebook.com/harborhearth",
+    "instagram": "https://instagram.com/harborhearth",
+    "twitter": "https://twitter.com/harborhearth",
+    "linkedin": ""
+  }
+}

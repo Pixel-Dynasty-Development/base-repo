@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Navigation",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "name", "path"],
+    "properties": {
+      "id": { "type": "string" },
+      "name": { "type": "string" },
+      "path": { "type": "string" },
+      "order": { "type": "integer" },
+      "component": { "type": "string" }
+    },
+    "additionalProperties": false
+  }
+}

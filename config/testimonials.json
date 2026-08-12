@@ -1,0 +1,20 @@
+[
+  {
+    "id": "t1",
+    "author": "Maya Ruiz",
+    "role": "Owner, Shoreline Books",
+    "company": "Shoreline Books",
+    "quote": "Best espresso in town — our team visits every morning.",
+    "date": "2026-05-14",
+    "rating": 5
+  },
+  {
+    "id": "t2",
+    "author": "Daniel Price",
+    "role": "Event Coordinator",
+    "company": "Bayshore Market",
+    "quote": "Fantastic service and consistent roast profiles for events.",
+    "date": "2026-03-02",
+    "rating": 5
+  }
+]

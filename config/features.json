@@ -1,0 +1,19 @@
+{
+  "id": "features",
+  "darkMode": true,
+  "blog": true,
+  "testimonials": true,
+  "contactForm": true,
+  "newsletter": true,
+  "onlineOrdering": true,
+  "shop": true,
+  "serviceListings": false,
+  "faqs": true,
+  "pricingTable": false,
+  "featureDescriptions": {
+    "darkMode": "UI supports dark and light themes.",
+    "onlineOrdering": "Customers can place orders for pickup or local delivery.",
+    "shop": "Sell beans, merch, and gift cards online.",
+    "newsletter": "Collect emails for seasonal offers and events."
+  }
+}

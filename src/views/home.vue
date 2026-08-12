@@ -19,17 +19,17 @@ import ContactForm from '../components/ContactForm.vue'
         <h1
           class="text-primary text-5xl font-extrabold tracking-tight sm:text-7xl"
         >
-          {{ $config.tagline }}
+          {{ $config.tagline || $config.metadata?.tagline || $config.metadata?.displayName || 'Welcome' }}
         </h1>
         <p class="text-muted-text mx-auto mt-6 max-w-2xl text-xl leading-8">
-          {{ $config.description }}
+          {{ $config.description || $config.metadata?.description }}
         </p>
         <div class="mt-10 flex items-center justify-center gap-x-6">
           <router-link
             to="/about"
             class="rounded-custom bg-primary px-8 py-4 text-sm font-semibold text-white shadow-lg transition-all hover:opacity-90"
           >
-            Our Story
+            {{ $config.metadata?.ctaLabel || 'Learn more' }}
           </router-link>
         </div>
       </section>
@@ -55,22 +55,20 @@ import ContactForm from '../components/ContactForm.vue'
               <span class="text-primary">Digital Dynasty?</span>
             </h2>
             <p class="text-muted-text mt-4 text-lg">
-              Whether it's a client project, a non-profit initiative for
-              <strong>The Bloom Foundation</strong>, or a
-              <strong>Switch It</strong> workflow optimization, let's make it
-              efficient.
+              Whether it's a client project, a community initiative, or an
+              internal workflow optimization, let's make it efficient.
             </p>
 
             <div class="mt-8 space-y-4">
               <div class="flex items-center gap-3">
                 <span class="text-accent text-2xl">📍</span>
                 <span class="text-muted-text">{{
-                  $config.contact.address.display
+                  $config.contact?.address?.display || $config.contact?.addressLine || 'Location not set'
                 }}</span>
               </div>
               <div class="flex items-center gap-3">
                 <span class="text-accent text-2xl">✉️</span>
-                <span class="text-muted-text">{{ $config.contact.email }}</span>
+                <span class="text-muted-text">{{ $config.contact?.email || 'contact@example.com' }}</span>
               </div>
             </div>
           </div>

@@ -35,10 +35,12 @@
 </template>
 
 <script setup>
-import { onMounted, onBeforeUnmount } from 'vue'
-import shop from '../../config/shop.json'
+import { onMounted, onBeforeUnmount, inject } from 'vue'
 import cart from '../stores/cart'
 import { useRouter } from 'vue-router'
+
+const config = inject('config') || {}
+const shop = config.shop || { products: [], currency: 'USD' }
 
 const items = cart.state.items
 const subtotal = cart.subtotal
@@ -60,7 +62,7 @@ function formatPrice(cents) {
 }
 
 function productById(id) {
-  return shop.products.find(p => p.id === id) || { name: 'Unknown' }
+  return (shop.products || []).find(p => p.id === id) || { name: 'Unknown' }
 }
 
 function productName(id) {

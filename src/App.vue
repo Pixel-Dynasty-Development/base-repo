@@ -1,12 +1,17 @@
 <script setup>
 // Import your global components
+import { ref } from 'vue'
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
+import CartDrawer from './components/CartDrawer.vue'
+
+const cartOpen = ref(false)
+const toggleCart = () => { cartOpen.value = !cartOpen.value }
 </script>
 
 <template>
   <div class="bg-main-bg text-main-text flex min-h-screen flex-col">
-    <Header :class="{ 'sticky top-0 z-50': $theme.layout.navSticky }" />
+    <Header :class="{ 'sticky top-0 z-50': $theme.layout.navSticky }" @toggle-cart="toggleCart" />
 
     <main
       class="container mx-auto grow px-4 py-8"
@@ -20,6 +25,8 @@ import Footer from './components/Footer.vue'
     </main>
 
     <Footer />
+
+    <CartDrawer v-if="cartOpen" @close="toggleCart" />
   </div>
 </template>
 

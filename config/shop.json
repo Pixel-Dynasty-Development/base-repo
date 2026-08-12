@@ -1,0 +1,48 @@
+{
+  "id": "shop",
+  "currency": "USD",
+  "locale": "en-US",
+  "taxIncluded": false,
+  "products": [
+    {
+      "id": "p-dark-12oz",
+      "sku": "HB-DR-12",
+      "slug": "dark-roast-12oz",
+      "name": "Dark Roast — 12oz",
+      "description": "Rich, full-bodied dark roast with chocolate and caramel notes.",
+      "price": 1499,
+      "currency": "USD",
+      "images": ["/assets/products/placeholder-1.svg"],
+      "variants": [
+        { "id": "v1", "name": "12oz", "price": 1499, "inventory": 25 }
+      ],
+      "inventory": 25,
+      "available": true,
+      "categories": ["coffee", "beans"],
+      "tags": ["dark", "roast", "whole-bean"],
+      "weightKg": 0.34,
+      "metadata": { "origin": "Colombia", "roastDate": "2026-07-15" },
+      "updatedAt": "2026-08-11T00:00:00Z"
+    },
+    {
+      "id": "p-medium-12oz",
+      "sku": "HB-MD-12",
+      "slug": "medium-roast-12oz",
+      "name": "Medium Roast — 12oz",
+      "description": "Balanced medium roast with bright fruit and nutty finish.",
+      "price": 1399,
+      "currency": "USD",
+      "images": ["/assets/products/placeholder-2.svg"],
+      "variants": [
+        { "id": "v1", "name": "12oz", "price": 1399, "inventory": 30 }
+      ],
+      "inventory": 30,
+      "available": true,
+      "categories": ["coffee", "beans"],
+      "tags": ["medium", "roast", "whole-bean"],
+      "weightKg": 0.34,
+      "metadata": { "origin": "Ethiopia", "roastDate": "2026-07-20" },
+      "updatedAt": "2026-08-11T00:00:00Z"
+    }
+  ]
+}

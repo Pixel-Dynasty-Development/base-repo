@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Config Index",
+  "type": "object",
+  "required": ["id", "files"],
+  "properties": {
+    "id": { "type": "string" },
+    "version": { "type": "string" },
+    "files": {
+      "type": "object",
+      "patternProperties": {
+        "^.*$": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "note": { "type": "string" },
+    "updatedAt": { "type": "string", "format": "date-time" }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,43 @@
+{
+  "id": "seo",
+  "siteTitle": "Harbor & Hearth Coffee Co.",
+  "titleTemplate": "%s | Harbor & Hearth",
+  "defaultDescription": "Harbor & Hearth is a neighborhood roastery and café offering small-batch coffee, pastries, and community events.",
+  "defaultImage": "/assets/seo/default-share.jpg",
+  "canonicalHost": "https://harborhearth.example",
+  "openGraph": {
+    "type": "website",
+    "locale": "en_US",
+    "siteName": "Harbor & Hearth"
+  },
+  "twitter": {
+    "card": "summary_large_image",
+    "site": "@harborhearth",
+    "creator": "@harborhearth"
+  },
+  "robots": {
+    "index": true,
+    "follow": true
+  },
+  "structuredData": {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "Harbor & Hearth Coffee Co.",
+    "url": "https://harborhearth.example",
+    "sameAs": [
+      "https://facebook.com/harborhearth",
+      "https://instagram.com/harborhearth"
+    ]
+  },
+  "pageDefaults": {
+    "meta": {
+      "title": null,
+      "description": null,
+      "image": null,
+      "canonical": null
+    },
+    "og": {},
+    "twitter": {}
+  },
+  "updatedAt": "2026-08-11T20:22:27.649Z"
+}

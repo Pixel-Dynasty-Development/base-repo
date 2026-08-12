@@ -1,0 +1,14 @@
+[
+  {
+    "id": "f1",
+    "question": "Do you offer single-origin coffee subscriptions?",
+    "answer": "Yes — monthly subscriptions for single-origin beans are available with local pickup or shipping.",
+    "tags": ["subscriptions", "shipping"]
+  },
+  {
+    "id": "f2",
+    "question": "Can I host private events at the café?",
+    "answer": "Yes. The space can be reserved for small private events; contact our events team to inquire about availability and pricing.",
+    "tags": ["events", "reservations"]
+  }
+]

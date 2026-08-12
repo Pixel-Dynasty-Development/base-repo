@@ -10,8 +10,7 @@ import ContactForm from '../components/ContactForm.vue'
           Get in Touch
         </h1>
         <p class="text-muted-text mt-6 text-lg">
-          Have a question about a project or want to chat about 3D prototyping?
-          Use the form below and I'll get back to you within 24 hours.
+          {{ $config.metadata?.contactIntro || 'Have a question about a project or want to work together? Use the form below and we will get back to you as soon as possible.' }}
         </p>
       </div>
 
@@ -22,9 +21,9 @@ import ContactForm from '../components/ContactForm.vue'
       <div class="text-muted-text mt-16 text-center text-sm">
         <p>
           Operating out of
-          <strong>{{ $config.contact.address.display }}</strong>
+          <strong>{{ $config.contact?.address?.display || $config.contact?.addressLine || 'Unlisted' }}</strong>
         </p>
-        <p class="mt-2 italic">Standard response time: &lt; 1 Business Day</p>
+        <p class="mt-2 italic">{{ $config.metadata?.responseTime || 'Standard response time: &lt; 1 business day' }}</p>
       </div>
     </div>
   </div>

@@ -29,8 +29,8 @@ import FAQAccordion from '../components/FAQAccordion.vue'
     >
       <SectionHeading
         eyebrow="FAQ"
-        title="Questions we often hear from clients"
-        description="Use a dedicated FAQ page to reduce friction, boost conversions, and clarify your process."
+        :title="$config.metadata?.faqTitle || 'Questions we often hear from clients'"
+        :description="$config.metadata?.faqDescription || 'Use a dedicated FAQ page to reduce friction, boost conversions, and clarify your process.'"
       />
 
       <div class="mt-16">

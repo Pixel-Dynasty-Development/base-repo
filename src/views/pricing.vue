@@ -3,7 +3,7 @@ import SectionHeading from '../components/SectionHeading.vue'
 import PricingTable from '../components/PricingTable.vue'
 import FAQAccordion from '../components/FAQAccordion.vue'
 
-const plans = [
+const defaultPlans = [
   {
     type: 'Starter',
     name: 'Basic',
@@ -54,12 +54,12 @@ const plans = [
     >
       <SectionHeading
         eyebrow="Pricing"
-        title="Transparent packages for every budget"
-        description="Create clear offers for agencies, product teams, freelancers, or local businesses with adaptable pricing cards."
+        :title="$config.metadata?.pricingTitle || 'Transparent packages for every budget'"
+        :description="$config.metadata?.pricingDescription || 'Create clear offers for agencies, product teams, freelancers, or local businesses with adaptable pricing cards.'"
       />
 
       <div class="mt-16">
-        <PricingTable :plans="plans" />
+        <PricingTable :plans="$config.pricingPlans || defaultPlans" />
       </div>
 
       <div class="mt-20">

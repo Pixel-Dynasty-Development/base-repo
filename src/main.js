@@ -1,93 +1,159 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import router from './router.js' // Pointing to your single file
-import config from '../config.json'
-import themeConfig from './assets/theme.json'
+import router from './router.js'
+import configIndex from '../config/index.json' // index that references the modular config files
 import './index.css'
+import themeConfig from './assets/theme.json'
+
+// Explicit static imports for config files (works in dev and production)
+import metadata from '../config/metadata.json'
+import contact from '../config/contact.json'
+import navigation from '../config/navigation.json'
+import features from '../config/features.json'
+import testimonials from '../config/testimonials.json'
+import team from '../config/team.json'
+import faqs from '../config/faqs.json'
+import seo from '../config/seo.json'
+import shop from '../config/shop.json'
+
+const configParts = { metadata, contact, navigation, features, testimonials, team, faqs, seo, shop }
+const config = { ...configIndex, ...configParts }
+
+// Backwards compatibility with older code that referenced top-level keys
+// Copy common metadata fields and collections to the top-level if missing
+try {
+  const legacyMap = {
+    businessName: config.metadata?.businessName,
+    tagline: config.metadata?.tagline,
+    description: config.metadata?.description,
+    url: config.metadata?.url,
+    foundingYear: config.metadata?.foundingYear
+  }
+  Object.entries(legacyMap).forEach(([k, v]) => {
+    if (v !== undefined && config[k] === undefined) config[k] = v
+  })
+
+  // Collections and objects older components may expect
+  if (!config.contact && config.contact === undefined && contact) config.contact = contact
+  if (!config.navigation && navigation) config.navigation = navigation
+  if (!config.testimonials && testimonials) config.testimonials = testimonials
+  if (!config.members && team) config.members = team // keep legacy 'members' key
+  if (!config.faqs && faqs) config.faqs = faqs
+  if (!config.features && features) config.features = features
+
+  // Warn once in dev to update components to the new config structure
+  if (typeof window !== 'undefined' && process.env.NODE_ENV !== 'production') {
+    // eslint-disable-next-line no-console
+    console.warn('[config] Using legacy top-level config mappings — consider updating components to use config.metadata, config.contact, config.features, etc.')
+  }
+} catch (e) {
+  // ignore mapping errors
+}
+
 
 const app = createApp(App)
+
+// Provide config for injection and also set globalProperties for backwards compatibility
+app.provide('config', config)
+app.config.globalProperties.$config = config
+app.config.globalProperties.$theme = themeConfig
+
 const root = typeof document !== 'undefined' ? document.documentElement : null
 
-/**
- * 🎨 Dynamic Theme Engine
- * Injects colors from config.json into CSS variables
- */
-const injectTheme = () => {
+const setThemeClass = (mode) => {
+  if (!root) return
+  if (mode === 'dark') root.classList.add('dark')
+  else root.classList.remove('dark')
+}
+
+const injectThemeVariables = () => {
+  if (!root) return
   try {
-    if (!root) return
-
-    // 1. Map Brand Colors (e.g., --color-primary)
+    // Brand colors (kept as --color-<name> for direct use)
     const brand = themeConfig?.theme?.brand || {}
-    Object.entries(brand).forEach(([key, val]) => {
-      if (val != null) root.style.setProperty(`--color-${key}`, val)
+    Object.entries(brand).forEach(([k, v]) => {
+      if (v != null) root.style.setProperty(`--color-${k}`, v)
     })
 
-    // 2. Map Layout Variables (e.g., --borderRadius)
-    const layout = themeConfig?.layout || {}
-    Object.entries(layout).forEach(([key, val]) => {
-      if (val != null) root.style.setProperty(`--${key}`, val)
-    })
-
-    // 3. Setup semantic theme (Light/Dark)
-    const storedTheme =
-      typeof window !== 'undefined' && window.localStorage?.getItem('theme')
-        ? window.localStorage.getItem('theme')
-        : null
-
-    const userPrefersDark =
+    const stored = typeof window !== 'undefined' ? window.localStorage?.getItem('theme') : null
+    const prefersDark =
       typeof window !== 'undefined' &&
       typeof window.matchMedia === 'function' &&
       window.matchMedia('(prefers-color-scheme: dark)').matches
 
     const activeMode = config?.features?.darkMode
-      ? storedTheme === 'dark' || (!storedTheme && userPrefersDark)
+      ? stored === 'dark' || (!stored && prefersDark)
         ? 'dark'
         : 'light'
       : 'light'
 
-    const themeData =
-      themeConfig?.theme?.[activeMode] || themeConfig?.theme?.light || {}
+    const themeData = themeConfig?.theme?.[activeMode] || {}
 
-    // Recursively map nested theme objects (bg, text, border)
-    const processTheme = (obj, prefix = '') => {
-      Object.entries(obj).forEach(([key, val]) => {
-        if (val && typeof val === 'object') {
-          processTheme(val, `${prefix}${key}-`)
-        } else if (val != null) {
-          root.style.setProperty(`--theme-${prefix}${key}`, val)
-        }
-      })
+    // Map themeData to canonical CSS variables used in index.css
+    if (themeData.bg) {
+      if (themeData.bg.page != null) root.style.setProperty('--main-bg', themeData.bg.page)
+      if (themeData.bg.surface != null) root.style.setProperty('--surface', themeData.bg.surface)
+      if (themeData.bg.input != null) root.style.setProperty('--input-bg', themeData.bg.input)
     }
 
-    processTheme(themeData)
+    if (themeData.text) {
+      if (themeData.text.main != null) root.style.setProperty('--main-text', themeData.text.main)
+      if (themeData.text.muted != null) root.style.setProperty('--muted-text', themeData.text.muted)
+      if (themeData.text.inverse != null) root.style.setProperty('--inverse-text', themeData.text.inverse)
+    }
 
-    // Add dark class to root for Tailwind's dark: variant support
-    if (activeMode === 'dark') root.classList.add('dark')
-    else root.classList.remove('dark')
+    if (themeData.border != null) root.style.setProperty('--border-subtle', themeData.border)
+
+    // Layout variables
+    const layout = themeConfig?.layout || {}
+    if (layout.borderRadius != null) root.style.setProperty('--radius-custom', layout.borderRadius)
+    if (layout.maxWidth != null) root.style.setProperty('--max-width', layout.maxWidth)
+
+    setThemeClass(activeMode)
   } catch (err) {
-    // Fail safe: avoid breaking app startup on theme errors
     // eslint-disable-next-line no-console
-    console.warn('injectTheme failed:', err)
+    console.warn('Theme injection failed', err)
   }
 }
 
-// Run the engine
-injectTheme()
+// Initial run
+injectThemeVariables()
 
-// Set a sensible document title if available
+// React to system theme changes and storage changes
+if (typeof window !== 'undefined') {
+  try {
+    const mq = window.matchMedia('(prefers-color-scheme: dark)')
+    if (mq && typeof mq.addEventListener === 'function') {
+      mq.addEventListener('change', () => injectThemeVariables())
+    } else if (mq && typeof mq.addListener === 'function') {
+      mq.addListener(() => injectThemeVariables())
+    }
+
+    window.addEventListener('storage', (e) => {
+      if (e.key === 'theme') injectThemeVariables()
+    })
+
+    // Allow same-tab theme toggles to notify the injector
+    window.addEventListener('theme-changed', () => injectThemeVariables())
+
+    // Expose for manual calls if needed
+    // eslint-disable-next-line no-undef
+    window.__applyTheme = injectThemeVariables
+  } catch (e) {
+    /* ignore */
+  }
+}
+
+// sensible title fallback
 if (typeof document !== 'undefined') {
   try {
-    const titleBase = config?.businessName || 'App'
-    const subtitle = config?.tagline ? ` — ${config.tagline}` : ''
+    const titleBase = config?.metadata?.businessName || 'App'
+    const subtitle = config?.metadata?.tagline ? ` — ${config.metadata.tagline}` : ''
     document.title = `${titleBase}${subtitle}`
   } catch (e) {
     // ignore
   }
 }
-
-// Make config globally available as $config in all components
-app.config.globalProperties.$config = config
-app.config.globalProperties.$theme = themeConfig
 
 app.use(router)
 app.mount('#app')

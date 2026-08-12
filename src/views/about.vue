@@ -1,16 +1,7 @@
 <script setup>
-import TeamCards from '../components/TeamCards.vue';
-
-
-const members = [
-  {
-    name: 'Ryan Buchanan',
-    role: 'Founder & Lead Developer',
-    bio: 'With a passion for efficient code and scalable solutions, Ryan leads our development efforts, ensuring every project is built to last.',
-    avatar: 'https://i.pravatar.cc/150?img=1',
-  },
-]
+import TeamCards from '../components/TeamCards.vue'
 </script>
+
 <template>
   <div>
     <section class="bg-main-bg py-20 transition-colors">
@@ -23,16 +14,11 @@ const members = [
         <h1
           class="text-main-text mb-6 text-4xl leading-tight font-extrabold md:text-5xl"
         >
-          Building Digital Dynasties, One Efficient Pixel at a Time.
+          {{ $config.metadata?.tagline || $config.tagline || 'Our Story' }}
         </h1>
 
         <p class="text-muted-text mx-auto mb-10 max-w-4xl text-xl">
-          Founded on the principle of **maximum efficiency**,
-          {{ $config.businessName }}
-          is a one-person web development firm dedicated to delivering
-          high-performance, custom digital solutions. We don't just build
-          websites; we craft lean, scalable architectures that ensure longevity
-          and minimize long-term costs.
+          {{ $config.description || ($config.metadata?.description || '') }}
         </p>
 
         <div
@@ -40,8 +26,9 @@ const members = [
         >
           <span class="text-4xl text-white">👤</span>
         </div>
-        <p class="text-primary text-lg font-semibold">Ryan Buchanan</p>
-        <p class="text-muted-text text-sm">Founder & Lead Developer</p>
+
+        <p class="text-primary text-lg font-semibold">{{ $config.members?.[0]?.name || $config.metadata?.businessName }}</p>
+        <p class="text-muted-text text-sm">{{ $config.members?.[0]?.role || $config.metadata?.industry }}</p>
       </div>
     </section>
 
@@ -51,7 +38,7 @@ const members = [
         :style="{ maxWidth: $theme.layout.maxWidth }"
       >
         <h2 class="text-main-text mb-12 text-center text-3xl font-bold">
-          The {{ $config.businessName }} Difference
+          The {{ $config.metadata?.businessName || $config.metadata?.displayName || 'Our Company' }} Difference
         </h2>
 
         <div class="grid grid-cols-1 gap-10 md:grid-cols-3">
@@ -60,12 +47,10 @@ const members = [
           >
             <div class="text-accent mb-3 text-4xl">⚡</div>
             <h3 class="text-primary mb-2 text-xl font-semibold">
-              Efficiency Obsession
+              {{ ($config.metadata?.featuresHeadline) || 'Efficiency Obsession' }}
             </h3>
             <p class="text-muted-text">
-              Our code is clean, fast, and optimized. We believe great
-              development minimizes overhead and maximizes performance from day
-              one.
+              {{ ($config.metadata?.featuresCopy) || 'Our code is clean, fast, and optimized. We believe great development minimizes overhead and maximizes performance from day one.' }}
             </p>
           </div>
 
@@ -74,11 +59,10 @@ const members = [
           >
             <div class="text-accent mb-3 text-4xl">🛡️</div>
             <h3 class="text-primary mb-2 text-xl font-semibold">
-              Unwavering Quality
+              {{ ($config.metadata?.qualityHeadline) || 'Unwavering Quality' }}
             </h3>
             <p class="text-muted-text">
-              We deliver robust, well-tested solutions that stand up to modern
-              demands, from Tailwind CSS implementation to complex routing.
+              {{ ($config.metadata?.qualityCopy) || 'We deliver robust, well-tested solutions that stand up to modern demands, from Tailwind CSS implementation to complex routing.' }}
             </p>
           </div>
 
@@ -87,12 +71,10 @@ const members = [
           >
             <div class="text-accent mb-3 text-4xl">🤝</div>
             <h3 class="text-primary mb-2 text-xl font-semibold">
-              Focused Partnership
+              {{ ($config.metadata?.partnershipHeadline) || 'Focused Partnership' }}
             </h3>
             <p class="text-muted-text">
-              As a dedicated partner, we provide clear communication and support
-              for all our projects, including non-profits like **The Bloom
-              Foundation**.
+              {{ ($config.metadata?.partnershipCopy) || 'As a dedicated partner, we provide clear communication and support for all our projects.' }}
             </p>
           </div>
         </div>
@@ -119,8 +101,7 @@ const members = [
         </h2>
 
         <p class="text-muted-text mx-auto mb-8 max-w-3xl text-lg">
-          We divide our time efficiently among client work and high-impact
-          initiatives.
+          {{ $config.metadata?.sectorsCopy || 'We divide our time efficiently among client work and high-impact initiatives.' }}
         </p>
 
         <div class="mb-12 grid grid-cols-1 gap-8 md:grid-cols-3">
@@ -131,23 +112,23 @@ const members = [
               {{ $config.businessName }} Clients
             </h4>
             <p class="text-muted-text text-sm">
-              Custom web development and consulting services.
+              {{ $config.metadata?.clientsCopy || 'Custom web development and consulting services.' }}
             </p>
           </div>
           <div
             class="bg-surface border-border-subtle rounded-custom border p-4"
           >
-            <h4 class="text-primary font-bold">The Bloom Foundation</h4>
+            <h4 class="text-primary font-bold">{{ $config.testimonials?.[0]?.company || 'Featured Partner' }}</h4>
             <p class="text-muted-text text-sm">
-              Non-profit support for child poverty initiatives.
+              {{ $config.metadata?.partnerCopy || ($config.testimonials?.[0]?.quote || '') }}
             </p>
           </div>
           <div
             class="bg-surface border-border-subtle rounded-custom border p-4"
           >
-            <h4 class="text-primary font-bold">Switch It</h4>
+            <h4 class="text-primary font-bold">{{ $config.testimonials?.[1]?.company || 'Another Partner' }}</h4>
             <p class="text-muted-text text-sm">
-              Supporting my day-job initiatives with technical expertise.
+              {{ $config.metadata?.otherPartnerCopy || ($config.testimonials?.[1]?.quote || '') }}
             </p>
           </div>
         </div>

@@ -1,7 +1,10 @@
 <script setup>
+import { inject } from 'vue'
 import OnlineMenu from '../components/OnlineMenu.vue'
-import menuData from '../assets/menu.json'
-import config from '../../config.json'
+import menuFallback from '../assets/menu.json'
+
+const config = inject('config') || {}
+const menuData = config.menu || menuFallback
 </script>
 
 <template>
@@ -14,7 +17,7 @@ import config from '../../config.json'
         {{ menuData.description || 'Discover our featured selections.' }}
       </h1>
       <p class="text-muted-text mx-auto mt-6 max-w-2xl text-lg leading-8">
-        {{ config.description }}
+        {{ $config.description }}
       </p>
     </div>
 

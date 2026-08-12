@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import config from '../config.json'
+import metadata from '../config/metadata.json'
+import navigation from '../config/navigation.json'
+import features from '../config/features.json'
 import menuData from './assets/menu.json'
 
 const views = import.meta.glob('./views/*.vue')
@@ -16,31 +18,35 @@ const resolveView = component => {
   return () => import('./views/NotFound.vue')
 }
 
-if (!Array.isArray(config.navigation)) {
-  config.navigation = []
-}
+// Start from the navigation array; make a shallow copy so we don't mutate the source file
+const nav = Array.isArray(navigation) ? [...navigation] : []
 
-if (config.features?.onlineMenu && menuData?.enabled) {
+if (features?.onlineMenu && menuData?.enabled) {
   const menuPath = menuData.path || '/menu'
   const menuName = menuData.label || 'Menu'
 
-  if (!config.navigation.some(route => route.path === menuPath)) {
-    config.navigation.push({
-      name: menuName,
-      path: menuPath,
-      component: 'menu',
-    })
+  if (!nav.some(route => route.path === menuPath)) {
+    nav.push({ name: menuName, path: menuPath, component: 'menu' })
   }
 }
 
-const routes = config.navigation.map(route => {
-  return {
-    path: route.path,
-    name: route.name,
-    component: resolveView(route.component),
-    meta: { title: route.name },
-  }
-})
+const routes = nav.map(route => ({
+  path: route.path,
+  name: route.name,
+  component: resolveView(route.component),
+  meta: { title: route.name },
+}))
+
+// Add product and checkout routes when shop exists
+try {
+  // add product detail route
+  routes.push({ path: '/shop/:slug', name: 'Product', component: () => import('./views/product.vue'), meta: { title: 'Product' } })
+  // checkout and order confirmation
+  routes.push({ path: '/checkout', name: 'Checkout', component: () => import('./views/checkout.vue'), meta: { title: 'Checkout' } })
+  routes.push({ path: '/order-confirmation', name: 'OrderConfirmation', component: () => import('./views/order-confirmation.vue'), meta: { title: 'Order Confirmation' } })
+} catch (e) {
+  // ignore if views don't exist
+}
 
 // Add a catch-all NotFound route
 routes.push({
@@ -64,7 +70,7 @@ const router = createRouter({
 // Update document title from route meta
 router.afterEach(to => {
   try {
-    const base = config?.businessName || ''
+    const base = metadata?.businessName || ''
     if (to?.meta?.title) document.title = `${to.meta.title} · ${base}`
     else if (base) document.title = base
   } catch (e) {

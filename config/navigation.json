@@ -1,0 +1,9 @@
+[
+  { "id": "home", "name": "Home", "path": "/", "order": 1, "component": "home" },
+  { "id": "about", "name": "About", "path": "/about", "order": 2, "component": "about" },
+  { "id": "menu", "name": "Menu", "path": "/menu", "order": 3, "component": "menu" },
+  { "id": "shop", "name": "Shop", "path": "/shop", "order": 4, "component": "shop" },
+  { "id": "locations", "name": "Locations", "path": "/locations", "order": 5, "component": "locations" },
+  { "id": "events", "name": "Events", "path": "/events", "order": 6, "component": "events" },
+  { "id": "contact", "name": "Contact", "path": "/contact", "order": 7, "component": "contact" }
+]

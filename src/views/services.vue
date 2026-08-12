@@ -3,7 +3,7 @@ import SectionHeading from '../components/SectionHeading.vue'
 import FeatureGrid from '../components/FeatureGrid.vue'
 import StatsGrid from '../components/StatsGrid.vue'
 
-const features = [
+const defaultFeatures = [
   {
     icon: '⚡',
     title: 'Fast Launch',
@@ -24,7 +24,7 @@ const features = [
   },
 ]
 
-const stats = [
+const defaultStats = [
   { label: 'Projects Completed', value: '120+' },
   { label: 'Happy Clients', value: '85%' },
   { label: 'Years Experience', value: '8' },
@@ -39,13 +39,13 @@ const stats = [
       :style="{ maxWidth: $theme.layout.maxWidth }"
     >
       <SectionHeading
-        eyebrow="Our Services"
-        title="Solutions for every stage of your business"
-        description="Flexible offerings that fit startups, local shops, SaaS businesses, and creative agencies."
+        eyebrow="$config.metadata?.servicesEyebrow || 'Our Services'"
+        :title="$config.metadata?.servicesTitle || 'Solutions for every stage of your business'"
+        :description="$config.metadata?.servicesDescription || 'Flexible offerings that fit startups, local shops, SaaS businesses, and creative agencies.'"
       />
 
       <div class="mt-16">
-        <FeatureGrid :features="features" />
+        <FeatureGrid :features="$config.services || defaultFeatures" />
       </div>
 
       <div class="mt-20">
@@ -54,7 +54,7 @@ const stats = [
           description="Use these highlights as social proof on landing pages, investor decks, or sales brochures."
         />
         <div class="mt-10">
-          <StatsGrid :stats="stats" />
+          <StatsGrid :stats="$config.stats || defaultStats" />
         </div>
       </div>
     </div>

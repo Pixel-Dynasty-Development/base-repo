@@ -1,0 +1,18 @@
+[
+  {
+    "id": "m1",
+    "name": "Evelyn Park",
+    "role": "Founder & Head Roaster",
+    "bio": "Evelyn leads roast development and sources beans from small farms.",
+    "photo": "/assets/team/evelyn.svg",
+    "linkedin": "https://linkedin.com/in/evelyn-park"
+  },
+  {
+    "id": "m2",
+    "name": "Marcus Green",
+    "role": "General Manager",
+    "bio": "Marcus manages daily operations and community events.",
+    "photo": "/assets/team/marcus.svg",
+    "linkedin": "https://linkedin.com/in/marcus-green"
+  }
+]
