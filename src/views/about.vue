@@ -14,7 +14,7 @@ import TeamCards from '../components/TeamCards.vue'
         <h1
           class="text-main-text mb-6 text-4xl leading-tight font-extrabold md:text-5xl"
         >
-          {{ $config.metadata?.tagline || $config.tagline || 'Our Story' }}
+          {{ $config.metadata?.tagline || 'Our Story' }}
         </h1>
 
         <p class="text-muted-text mx-auto mb-10 max-w-4xl text-xl">

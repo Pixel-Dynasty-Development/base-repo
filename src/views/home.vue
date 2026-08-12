@@ -19,7 +19,7 @@ import ContactForm from '../components/ContactForm.vue'
         <h1
           class="text-primary text-5xl font-extrabold tracking-tight sm:text-7xl"
         >
-          {{ $config.metadata?.tagline || $config.metadata?.displayName || $config.tagline || 'Welcome' }}
+          {{ $config.metadata?.tagline || $config.metadata?.displayName || 'Welcome' }}
         </h1>
         <p class="text-muted-text mx-auto mt-6 max-w-2xl text-xl leading-8">
           {{ $config.metadata?.description || $config.description }}

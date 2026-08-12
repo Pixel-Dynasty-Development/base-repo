@@ -19,36 +19,6 @@ import shop from '../config/shop.json'
 const configParts = { metadata, contact, navigation, features, testimonials, team, faqs, seo, shop }
 const config = { ...configIndex, ...configParts }
 
-// Backwards compatibility with older code that referenced top-level keys
-// Copy common metadata fields and collections to the top-level if missing
-try {
-  const legacyMap = {
-    businessName: config.metadata?.businessName,
-    tagline: config.metadata?.tagline,
-    description: config.metadata?.description,
-    url: config.metadata?.url,
-    foundingYear: config.metadata?.foundingYear
-  }
-  Object.entries(legacyMap).forEach(([k, v]) => {
-    if (v !== undefined && config[k] === undefined) config[k] = v
-  })
-
-  // Collections and objects older components may expect
-  if (!config.contact && config.contact === undefined && contact) config.contact = contact
-  if (!config.navigation && navigation) config.navigation = navigation
-  if (!config.testimonials && testimonials) config.testimonials = testimonials
-  if (!config.members && team) config.members = team // keep legacy 'members' key
-  if (!config.faqs && faqs) config.faqs = faqs
-  if (!config.features && features) config.features = features
-
-  // Warn once in dev to update components to the new config structure
-  if (typeof window !== 'undefined' && process.env.NODE_ENV !== 'production') {
-    // eslint-disable-next-line no-console
-    console.warn('[config] Using legacy top-level config mappings — consider updating components to use config.metadata, config.contact, config.features, etc.')
-  }
-} catch (e) {
-  // ignore mapping errors
-}
 
 
 const app = createApp(App)
