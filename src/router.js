@@ -3,6 +3,7 @@ import metadata from '../config/metadata.json'
 import navigation from '../config/navigation.json'
 import features from '../config/features.json'
 import menuData from '../config/menu.json'
+import shop from '../config/shop.json'
 
 const views = import.meta.glob('./views/*.vue')
 
@@ -21,7 +22,7 @@ const resolveView = component => {
 // Start from the navigation array; make a shallow copy so we don't mutate the source file
 const nav = Array.isArray(navigation) ? [...navigation] : []
 
-if (features?.onlineMenu && menuData?.enabled) {
+if ((features?.onlineMenu && menuData?.enabled) || shop?.cartEnabled === false) {
   const menuPath = menuData.path || '/menu'
   const menuName = menuData.label || 'Menu'
 

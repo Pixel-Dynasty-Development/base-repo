@@ -2,6 +2,7 @@
   "id": "shop",
   "currency": "USD",
   "locale": "en-US",
+  "cartEnabled": true,
   "taxIncluded": false,
   "products": [
     {

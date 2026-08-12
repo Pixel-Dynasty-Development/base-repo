@@ -42,13 +42,20 @@ const itemCount = computed(() => cartStore.itemCount?.value || 0)
         >
           <ThemeToggle />
 
-          <!-- Cart button -->
-          <button @click="$emit('toggle-cart')" class="relative p-2" aria-label="Open cart">
+          <!-- Cart button (hidden when cart is disabled; show menu link instead) -->
+          <button v-if="$config.shop?.cartEnabled !== false" @click="$emit('toggle-cart')" class="relative p-2" aria-label="Open cart">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.3 5.2a1 1 0 00.95 1.3h11.7a1 1 0 00.95-1.3L17 13M7 13H5.4" />
             </svg>
             <span v-if="itemCount>0" class="absolute -top-1 -right-1 bg-primary text-white text-xs rounded-full px-1">{{ itemCount }}</span>
           </button>
+
+          <!-- When cart is disabled, surface a simple Menu link to keep navigation compact -->
+          <router-link v-else to="/menu" class="p-2 text-main-text" aria-label="Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </router-link>
 
           <router-link
             to="/contact"
