@@ -15,8 +15,10 @@ import team from '../config/team.json'
 import faqs from '../config/faqs.json'
 import seo from '../config/seo.json'
 import shop from '../config/shop.json'
+import locations from '../config/locations.json'
+import events from '../config/events.json'
 
-const configParts = { metadata, contact, navigation, features, testimonials, team, faqs, seo, shop }
+const configParts = { metadata, contact, navigation, features, testimonials, team, faqs, seo, shop, locations, events }
 const config = { ...configIndex, ...configParts }
 
 

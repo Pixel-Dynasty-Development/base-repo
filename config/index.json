@@ -10,7 +10,9 @@
     "team": "./team.json",
     "faqs": "./faqs.json",
     "seo": "./seo.json",
-    "shop": "./shop.json"
+    "shop": "./shop.json",
+    "locations": "./locations.json",
+    "events": "./events.json"
   },
   "note": "Load these files individually in your app or API. Use the file paths above to serve endpoints like /api/metadata, /api/features, etc.",
   "updatedAt": "2026-08-11T20:16:39.594Z"

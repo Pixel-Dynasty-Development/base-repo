@@ -1,5 +1,5 @@
 {
-  "enabled": false,
+  "enabled": true,
   "label": "Menu",
   "path": "/menu",
   "description": "Browse our curated menu selections, available for pickup and delivery.",

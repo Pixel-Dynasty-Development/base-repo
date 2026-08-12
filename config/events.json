@@ -1,0 +1,20 @@
+[
+  {
+    "id": "sunday-roast",
+    "title": "Sunday Roast Demonstration",
+    "date": "2026-09-05T10:00:00Z",
+    "location": "Harbor & Hearth — Roastery",
+    "description": "Join our head roaster for a live roast demonstration followed by a short Q&A and cupping.",
+    "url": "/events/sunday-roast",
+    "image": "/assets/seo/default-share.jpg"
+  },
+  {
+    "id": "open-mic",
+    "title": "Community Open Mic Night",
+    "date": "2026-09-18T18:30:00Z",
+    "location": "Harbor & Hearth — Main Street",
+    "description": "Poetry, music, and short-form storytelling. Sign-ups open at 6:00 PM.",
+    "url": "/events/open-mic",
+    "image": "/assets/team/evelyn.svg"
+  }
+]

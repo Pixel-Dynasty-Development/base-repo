@@ -1,0 +1,54 @@
+[
+  {
+    "id": "harbor-main",
+    "name": "Harbor & Hearth — Main Street",
+    "address": {
+      "display": "12 Harbor Way, Suite A, Portsville, ST 12345",
+      "street": "12 Harbor Way",
+      "city": "Portsville",
+      "state": "ST",
+      "postalCode": "12345",
+      "country": "USA"
+    },
+    "phone": "+1 (555) 123-4567",
+    "hours": {
+      "monday": "7:00 AM - 7:00 PM",
+      "tuesday": "7:00 AM - 7:00 PM",
+      "wednesday": "7:00 AM - 7:00 PM",
+      "thursday": "7:00 AM - 8:00 PM",
+      "friday": "7:00 AM - 9:00 PM",
+      "saturday": "8:00 AM - 9:00 PM",
+      "sunday": "8:00 AM - 3:00 PM"
+    },
+    "notes": "Counter service, walk-ins welcome. Street parking available.",
+    "mapUrl": "https://maps.example.com/?q=12+Harbor+Way+Portsville",
+    "lat": 40.7128,
+    "lng": -74.006
+  },
+  {
+    "id": "harbor-roastery",
+    "name": "Harbor & Hearth — Roastery",
+    "address": {
+      "display": "220 Dockside Blvd, Portsville, ST 12345",
+      "street": "220 Dockside Blvd",
+      "city": "Portsville",
+      "state": "ST",
+      "postalCode": "12345",
+      "country": "USA"
+    },
+    "phone": "+1 (555) 987-6543",
+    "hours": {
+      "monday": "8:00 AM - 4:00 PM",
+      "tuesday": "8:00 AM - 4:00 PM",
+      "wednesday": "8:00 AM - 4:00 PM",
+      "thursday": "8:00 AM - 4:00 PM",
+      "friday": "8:00 AM - 4:00 PM",
+      "saturday": "Closed",
+      "sunday": "Closed"
+    },
+    "notes": "Roastery tours by appointment. Wholesale pickup available.",
+    "mapUrl": "https://maps.example.com/?q=220+Dockside+Blvd+Portsville",
+    "lat": 40.7139,
+    "lng": -74.010
+  }
+]
