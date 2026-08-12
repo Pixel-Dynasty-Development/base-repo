@@ -18,7 +18,7 @@ import TeamCards from '../components/TeamCards.vue'
         </h1>
 
         <p class="text-muted-text mx-auto mb-10 max-w-4xl text-xl">
-          {{ $config.description || ($config.metadata?.description || '') }}
+          {{ $config.metadata?.description || $config.description || '' }}
         </p>
 
         <div
