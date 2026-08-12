@@ -42,11 +42,6 @@ const injectThemeVariables = () => {
   if (!root) return
   try {
     // Brand colors (kept as --color-<name> for direct use)
-    const brand = themeConfig?.theme?.brand || {}
-    Object.entries(brand).forEach(([k, v]) => {
-      if (v != null) root.style.setProperty(`--color-${k}`, v)
-    })
-
     const stored = typeof window !== 'undefined' ? window.localStorage?.getItem('theme') : null
     const prefersDark =
       typeof window !== 'undefined' &&
@@ -60,6 +55,10 @@ const injectThemeVariables = () => {
       : 'light'
 
     const themeData = themeConfig?.theme?.[activeMode] || {}
+    const brand = themeData.brand || themeConfig?.theme?.brand || {}
+    Object.entries(brand).forEach(([k, v]) => {
+      if (v != null) root.style.setProperty(`--color-${k}`, v)
+    })
 
     // Map themeData to canonical CSS variables used in index.css
     if (themeData.bg) {

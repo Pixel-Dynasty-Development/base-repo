@@ -1,17 +1,23 @@
 <template>
-  <div class="border rounded-lg p-4 flex flex-col">
-    <img :src="product.images?.[0]" :alt="product.name" class="h-40 w-full object-cover rounded" />
-    <h3 class="mt-3 text-lg font-semibold">{{ product.name }}</h3>
+  <div class="border-border-subtle flex flex-col rounded-lg border p-4">
+    <ImageWithFallback
+      :src="product.images?.[0]"
+      :fallback="'/assets/products/placeholder-1.svg'"
+      className="h-40 w-full rounded object-cover"
+      :alt="product.name"
+    />
+    <h3 class="text-main-text mt-3 text-lg font-semibold">{{ product.name }}</h3>
     <p class="text-muted-text mt-2">{{ product.description }}</p>
     <div class="mt-4 flex items-center justify-between">
-      <div class="text-xl font-bold">{{ formatPrice(product.price) }}</div>
-      <button @click="onAdd" class="bg-primary text-white px-3 py-1 rounded">Add</button>
+      <div class="text-main-text text-xl font-bold">{{ formatPrice(product.price) }}</div>
+      <button @click="onAdd" class="bg-primary rounded px-3 py-1 text-white">Add</button>
     </div>
   </div>
 </template>
 
 <script setup>
 import { toRefs, inject } from 'vue'
+import ImageWithFallback from './ImageWithFallback.vue'
 import cart from '../stores/cart'
 
 const props = defineProps({ product: { type: Object, required: true } })

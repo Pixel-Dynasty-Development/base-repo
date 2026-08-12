@@ -6,7 +6,7 @@
     "location": "Harbor & Hearth — Roastery",
     "description": "Join our head roaster for a live roast demonstration followed by a short Q&A and cupping.",
     "url": "/events/sunday-roast",
-    "image": "/assets/seo/default-share.jpg"
+    "image": "/assets/seo/event-placeholder.svg"
   },
   {
     "id": "open-mic",
@@ -15,6 +15,6 @@
     "location": "Harbor & Hearth — Main Street",
     "description": "Poetry, music, and short-form storytelling. Sign-ups open at 6:00 PM.",
     "url": "/events/open-mic",
-    "image": "/assets/team/evelyn.svg"
+    "image": "/assets/seo/event-placeholder.svg"
   }
 ]

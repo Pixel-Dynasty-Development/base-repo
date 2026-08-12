@@ -2,7 +2,7 @@
   <div class="py-12 container mx-auto">
     <div v-if="product">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <img :src="product.images?.[0]" alt="" class="w-full rounded object-cover" />
+        <ImageWithFallback :src="product.images?.[0]" :fallback="'/assets/products/placeholder-1.svg'" className="w-full rounded object-cover" />
         <div>
           <h1 class="text-3xl font-bold">{{ product.name }}</h1>
           <p class="text-muted-text mt-2">{{ product.description }}</p>
@@ -22,6 +22,7 @@
 <script setup>
 import { onMounted, ref, inject } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import ImageWithFallback from '../components/ImageWithFallback.vue'
 import cart from '../stores/cart'
 
 const config = inject('config') || {}

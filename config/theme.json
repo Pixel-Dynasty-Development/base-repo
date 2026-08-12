@@ -1,35 +1,45 @@
 {
   "theme": {
     "brand": {
-      "primary": "#e633b6",
-      "secondary": "#60a5fa",
-      "accent": "#f59e0b"
+      "primary": "#1f2937",
+      "secondary": "#6b7280",
+      "accent": "#d6b39d"
     },
     "light": {
+      "brand": {
+        "primary": "#1f2937",
+        "secondary": "#6b7280",
+        "accent": "#d6b39d"
+      },
       "bg": {
-        "page": "#ffffff",
-        "surface": "#f8fafc",
-        "input": "#ffffff"
+        "page": "#f5f3ee",
+        "surface": "#ffffff",
+        "input": "#f8f7f5"
       },
       "text": {
-        "main": "#0f172a",
-        "muted": "#64748b",
+        "main": "#1f2937",
+        "muted": "#6b7280",
         "inverse": "#ffffff"
       },
-      "border": "#e2e8f0"
+      "border": "#e7e5e4"
     },
     "dark": {
+      "brand": {
+        "primary": "#f4d7b2",
+        "secondary": "#d1d5db",
+        "accent": "#d6b39d"
+      },
       "bg": {
-        "page": "#0f172a",
-        "surface": "#1e293b",
-        "input": "#1e293b"
+        "page": "#111827",
+        "surface": "#1f2937",
+        "input": "#111827"
       },
       "text": {
-        "main": "#f8fafc",
-        "muted": "#94a3b8",
-        "inverse": "#0f172a"
+        "main": "#f9fafb",
+        "muted": "#cbd5e1",
+        "inverse": "#111827"
       },
-      "border": "#334155"
+      "border": "#374151"
     }
   },
   "layout": {

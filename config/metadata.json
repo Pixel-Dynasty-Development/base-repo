@@ -8,6 +8,7 @@
   "foundingYear": 2021,
   "industry": "Food & Beverage",
   "logo": "/assets/logo.svg",
+  "heroImage": "/assets/brand/hero-placeholder.svg",
   "version": "1.0.0",
   "featuresHeadline": "Efficiency Obsession",
   "featuresCopy": "Our code is clean, fast, and optimized. We believe great development minimizes overhead and maximizes performance from day one.",

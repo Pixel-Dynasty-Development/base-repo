@@ -2,32 +2,32 @@
   <div>
     <div class="fixed inset-0 z-40 bg-black/40" @click="emitClose" />
 
-    <aside ref="drawer" class="fixed right-0 top-0 h-full w-80 bg-white border-l p-4 shadow-lg z-50" role="dialog" aria-modal="true" aria-label="Shopping cart">
+    <aside ref="drawer" class="bg-surface border-border-subtle fixed right-0 top-0 z-50 h-full w-80 border-l p-4 shadow-lg" role="dialog" aria-modal="true" aria-label="Shopping cart">
       <div class="flex items-center justify-between">
-        <h3 class="text-xl font-bold">Cart ({{ itemCount }})</h3>
+        <h3 class="text-main-text text-xl font-bold">Cart ({{ itemCount }})</h3>
         <button ref="closeBtn" @click="emitClose" aria-label="Close cart" class="text-muted-text">✕</button>
       </div>
 
       <div v-if="items.length===0" class="mt-6 text-muted-text">Your cart is empty.</div>
       <ul class="mt-4 space-y-3">
-        <li v-for="(it, idx) in items" :key="idx" class="flex justify-between items-center">
+        <li v-for="(it, idx) in items" :key="idx" class="flex items-center justify-between">
           <div>
-            <div class="font-medium">{{ productName(it.productId) }}</div>
+            <div class="text-main-text font-medium">{{ productName(it.productId) }}</div>
             <div class="text-sm text-muted-text">{{ formatPrice(it.unitPrice) }} × {{ it.quantity }}</div>
           </div>
           <div class="flex items-center gap-2">
-            <button @click="dec(it)" class="px-2">-</button>
-            <span>{{ it.quantity }}</span>
-            <button @click="inc(it)" class="px-2">+</button>
+            <button @click="dec(it)" class="px-2 text-main-text">-</button>
+            <span class="text-main-text">{{ it.quantity }}</span>
+            <button @click="inc(it)" class="px-2 text-main-text">+</button>
           </div>
         </li>
       </ul>
 
-      <div class="mt-6 border-t pt-4">
-        <div class="flex justify-between"><span>Subtotal</span><strong>{{ formatPrice(subtotal) }}</strong></div>
+      <div class="border-border-subtle mt-6 border-t pt-4">
+        <div class="text-main-text flex justify-between"><span>Subtotal</span><strong>{{ formatPrice(subtotal) }}</strong></div>
         <div class="mt-4 flex gap-2">
-          <button @click="checkout" class="bg-primary text-white px-4 py-2 rounded">Checkout</button>
-          <button @click="clear" class="px-4 py-2 rounded border">Clear</button>
+          <button @click="checkout" class="bg-primary rounded px-4 py-2 text-white">Checkout</button>
+          <button @click="clear" class="border-border-subtle bg-main-bg rounded border px-4 py-2 text-main-text">Clear</button>
         </div>
       </div>
     </aside>

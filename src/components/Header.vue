@@ -20,8 +20,13 @@ const itemCount = computed(() => cartStore.itemCount?.value || 0)
       class="mx-auto flex h-16 items-center justify-between px-4"
       :style="{ maxWidth: $theme.layout.maxWidth }"
     >
-      <router-link to="/" class="flex items-center gap-2">
-        <span class="text-primary text-xl font-bold tracking-tight">
+      <router-link to="/" class="flex items-center gap-3">
+        <img
+          :src="$config.metadata?.logo || '/assets/logo.svg'"
+          alt="Business logo"
+          class="h-9 w-auto object-contain"
+        />
+        <span class="text-primary text-lg font-bold tracking-tight sm:text-xl">
           {{ $config.metadata?.displayName || $config.metadata?.businessName || 'Business' }}
         </span>
       </router-link>
@@ -32,7 +37,7 @@ const itemCount = computed(() => cartStore.itemCount?.value || 0)
           :key="link.path"
           :to="link.path"
           class="text-main-text hover:text-primary text-sm font-medium transition-colors"
-          active-class="!text-primary"
+          active-class="!text-accent"
         >
           {{ link.name }}
         </router-link>
@@ -126,7 +131,7 @@ const itemCount = computed(() => cartStore.itemCount?.value || 0)
             :to="link.path"
             @click="isMenuOpen = false"
             class="text-main-text hover:text-primary text-base font-medium transition-colors"
-            active-class="text-primary"
+            active-class="text-accent"
           >
             {{ link.name }}
           </router-link>

@@ -5,6 +5,7 @@
 
     <div v-if="$config.events && $config.events.length" class="space-y-6">
       <div v-for="ev in $config.events" :key="ev.id" class="rounded-custom border-border-subtle border bg-surface p-6 text-left">
+        <ImageWithFallback :src="ev.image" :fallback="'/assets/seo/event-placeholder.svg'" className="w-full h-40 object-cover rounded mb-4" />
         <h3 class="text-primary font-semibold">{{ ev.title }}</h3>
         <p class="text-muted-text mt-1">{{ ev.date }} • {{ ev.location }}</p>
         <p class="text-muted-text mt-2 text-sm">{{ ev.description }}</p>
@@ -16,5 +17,6 @@
 </template>
 
 <script setup>
+import ImageWithFallback from '../components/ImageWithFallback.vue'
 // Placeholder events view — update /config/events.json or add events to /config/index.json to populate
 </script>

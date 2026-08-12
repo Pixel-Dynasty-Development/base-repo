@@ -1,6 +1,7 @@
 <script setup>
 import Testimonials from '../components/Testimonials.vue'
 import ContactForm from '../components/ContactForm.vue'
+import ImageWithFallback from '../components/ImageWithFallback.vue'
 </script>
 
 <template>
@@ -15,22 +16,35 @@ import ContactForm from '../components/ContactForm.vue'
     </div>
 
     <div class="space-y-24 py-12">
-      <section class="text-center">
-        <h1
-          class="text-primary text-5xl font-extrabold tracking-tight sm:text-7xl"
-        >
-          {{ $config.metadata?.tagline || $config.metadata?.displayName || 'Welcome' }}
-        </h1>
-        <p class="text-muted-text mx-auto mt-6 max-w-2xl text-xl leading-8">
-          {{ $config.metadata?.description || $config.description }}
-        </p>
-        <div class="mt-10 flex items-center justify-center gap-x-6">
-          <router-link
-            to="/about"
-            class="rounded-custom bg-primary px-8 py-4 text-sm font-semibold text-white shadow-lg transition-all hover:opacity-90"
-          >
-            {{ $config.metadata?.ctaLabel || $config.metadata?.cta || 'Learn more' }}
-          </router-link>
+      <section class="container mx-auto px-4">
+        <div class="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+          <div class="text-center lg:text-left">
+            <h1 class="text-primary text-5xl font-extrabold tracking-tight sm:text-6xl lg:text-7xl">
+              {{ $config.metadata?.tagline || $config.metadata?.displayName || 'Welcome' }}
+            </h1>
+            <p class="text-muted-text mx-auto mt-6 max-w-2xl text-xl leading-8 lg:mx-0">
+              {{ $config.metadata?.description || $config.description }}
+            </p>
+            <div class="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
+              <router-link
+                to="/about"
+                class="rounded-custom bg-primary px-8 py-4 text-sm font-semibold text-white shadow-lg transition-all hover:opacity-90"
+              >
+                {{ $config.metadata?.ctaLabel || $config.metadata?.cta || 'Learn more' }}
+              </router-link>
+            </div>
+          </div>
+
+          <div class="relative">
+            <div class="border-border-subtle bg-surface overflow-hidden rounded-2xl border shadow-xl">
+              <ImageWithFallback
+                :src="$config.metadata?.heroImage || '/assets/brand/hero-placeholder.svg'"
+                :fallback="'/assets/brand/hero-placeholder.svg'"
+                :alt="($config.metadata?.businessName || 'Brand') + ' hero image'"
+                className="h-[420px] w-full object-cover"
+              />
+            </div>
+          </div>
         </div>
       </section>
 

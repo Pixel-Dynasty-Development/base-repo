@@ -1,36 +1,40 @@
 @import 'tailwindcss';
 
 @theme {
-  /* This creates bg-main-bg, text-main-bg, etc. */
+  /* Theme tokens used across the app */
   --color-main-bg: var(--main-bg);
   --color-surface: var(--surface);
   --color-main-text: var(--main-text);
   --color-muted-text: var(--muted-text);
   --color-border-subtle: var(--border-subtle);
-
-  /* Brand Colors */
-  --color-primary: #e633b6;
-  --color-secondary: #00d4ff;
+  --color-primary: #1f2937;
+  --color-secondary: #6b7280;
+  --color-accent: #d6b39d;
 
   /* Custom Radius for rounded-custom */
   --radius-custom: 12px;
 }
 
-/* Now define the actual values for those variables here */
 :root {
-  --main-bg: #ffffff;
-  --surface: #f8fafc;
-  --main-text: #0f172a;
-  --muted-text: #475569;
-  --border-subtle: #e2e8f0;
+  --main-bg: #f5f3ee;
+  --surface: #ffffff;
+  --main-text: #1f2937;
+  --muted-text: #6b7280;
+  --border-subtle: #e7e5e4;
+  --color-primary: #1f2937;
+  --color-secondary: #6b7280;
+  --color-accent: #d6b39d;
 }
 
 .dark {
-  --main-bg: #0b0f1a;
-  --surface: #161b2a;
-  --main-text: #f1f5f9;
-  --muted-text: #94a3b8;
-  --border-subtle: #1e293b;
+  --main-bg: #111827;
+  --surface: #1f2937;
+  --main-text: #f9fafb;
+  --muted-text: #cbd5e1;
+  --border-subtle: #374151;
+  --color-primary: #e5e7eb;
+  --color-secondary: #9ca3af;
+  --color-accent: #d6b39d;
 }
 
 /* Master class-based toggle for Tailwind 4 */

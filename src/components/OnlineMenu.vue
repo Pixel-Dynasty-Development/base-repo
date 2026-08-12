@@ -51,7 +51,7 @@ const sections = computed(() => {
           <div
             v-for="item in section.items || []"
             :key="item.name"
-            class="rounded-custom border-border-subtle hover:border-primary/50 border bg-white/80 p-5 transition hover:shadow-lg"
+            class="rounded-custom border-border-subtle hover:border-primary/50 border bg-main-bg/80 p-5 transition hover:shadow-lg"
           >
             <div
               class="flex flex-col gap-3 sm:flex-row sm:items-baseline sm:justify-between"
