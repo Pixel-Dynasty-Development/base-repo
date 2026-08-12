@@ -12,6 +12,13 @@ const toggleTheme = () => {
     document.documentElement.classList.remove('dark')
     localStorage.setItem('theme', 'light')
   }
+
+  // Notify the app so theme CSS variables are re-applied in the same tab
+  try {
+    window.dispatchEvent(new CustomEvent('theme-changed'))
+  } catch (e) {
+    // ignore
+  }
 }
 
 onMounted(() => {

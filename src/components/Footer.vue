@@ -5,30 +5,29 @@
       :style="{ maxWidth: $theme.layout.maxWidth }"
     >
       <div class="space-y-2">
-        <p class="text-primary text-lg font-bold">{{ $config.businessName }}</p>
-        <p class="text-muted-text text-sm">
-          © {{ $config.foundingYear }} - {{ new Date().getFullYear() }}
-        </p>
-        <p class="text-muted-text text-sm">
-          {{ $config.contact.address.display }}
-        </p>
+        <p class="text-primary text-lg font-bold">{{ $config.businessName || $config.metadata?.displayName || 'Business' }}</p>
+        <p class="text-muted-text text-sm">© {{ $config.foundingYear || $config.metadata?.foundingYear || new Date().getFullYear() }} - {{ new Date().getFullYear() }}</p>
+        <p v-if="$config.contact?.address?.display" class="text-muted-text text-sm">{{ $config.contact.address.display }}</p>
       </div>
 
       <div class="mt-8 flex gap-6 md:mt-0">
-        <a
-          v-for="(url, platform) in $config.contact.socials || {}"
-          :key="platform"
-          :href="url"
-          target="_blank"
-          rel="noreferrer noopener"
-          class="text-muted-text hover:text-primary capitalize transition-colors"
-        >
-          {{ platform }}
-        </a>
+        <template v-if="$config.contact?.socials">
+          <a
+            v-for="(url, platform) in $config.contact.socials"
+            :key="platform"
+            :href="url"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="text-muted-text hover:text-primary capitalize transition-colors"
+            >
+            {{ platform }}
+          </a>
+        </template>
       </div>
 
       <div class="mt-8 md:mt-0">
         <a
+          v-if="$config.contact?.email"
           :href="`mailto:${$config.contact.email}`"
           class="text-sm font-medium hover:underline"
         >

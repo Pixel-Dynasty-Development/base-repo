@@ -1,12 +1,15 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import ThemeToggle from './ThemeToggle.vue'
+import cartStore from '../stores/cart'
 
 const isMenuOpen = ref(false)
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value
 }
+
+const itemCount = computed(() => cartStore.itemCount?.value || 0)
 </script>
 
 <template>
@@ -38,6 +41,15 @@ const toggleMenu = () => {
           class="border-border-subtle ml-2 flex items-center gap-4 border-l pl-6"
         >
           <ThemeToggle />
+
+          <!-- Cart button -->
+          <button @click="$emit('toggle-cart')" class="relative p-2" aria-label="Open cart">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.3 5.2a1 1 0 00.95 1.3h11.7a1 1 0 00.95-1.3L17 13M7 13H5.4" />
+            </svg>
+            <span v-if="itemCount>0" class="absolute -top-1 -right-1 bg-primary text-white text-xs rounded-full px-1">{{ itemCount }}</span>
+          </button>
+
           <router-link
             to="/contact"
             class="rounded-custom bg-primary px-5 py-2 text-sm font-bold text-white shadow-md transition-all hover:opacity-90 active:scale-95"
